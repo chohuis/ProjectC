@@ -1,0 +1,60 @@
+{
+  // ── Godot 엔진 경로 ────────────────────────────────────────────────
+  // GUI 빌드를 쓴다. 콘솔 창이 따로 뜨지 않고, 게임의 print() 출력은
+  // 디버거 프로토콜을 통해 VSCode 디버그 콘솔로 들어온다.
+  // 터미널에서 직접 출력을 보려면 tasks.json 쪽 godot_console.exe 를 쓸 것.
+  "godotTools.editorPath.godot4": "C:\\Users\\user\\Tools\\Godot\\godot.exe",
+
+  // ── LSP (자동완성 / 정의로 이동 / 진단) ────────────────────────────
+  // 6005 는 Godot 4.6 의 network/language_server/remote_port 기본값이다.
+  // godot-tools 2.7.x 의 기본값은 6008 이므로 반드시 명시해서 맞춰야 한다.
+  // headless=false 이므로 자동완성을 쓰려면 Godot 에디터가 켜져 있어야 한다.
+  "godotTools.lsp.serverHost": "127.0.0.1",
+  "godotTools.lsp.serverPort": 6005,
+  "godotTools.lsp.headless": false,
+  "godotTools.lsp.autoReconnect.enabled": true,
+  "godotTools.lsp.autoReconnect.attempts": 10,
+
+  "godotTools.inlayHints.gdscript": true,
+  "godotTools.scenePreview.previewRelatedScenes": "sameFolder",
+
+  // ── GDScript 코드 스타일 ───────────────────────────────────────────
+  // GDScript 공식 스타일 가이드는 탭 인덴트를 요구한다. 스페이스로 섞이면
+  // 엔진이 파싱 에러를 낸다.
+  "[gdscript]": {
+    "editor.defaultFormatter": "geequlim.godot-tools",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false
+  },
+  "[gdresource]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+
+  "files.associations": {
+    "*.gd": "gdscript",
+    "*.tscn": "gdscene",
+    "*.tres": "gdresource",
+    "*.godot": "ini",
+    "*.gdshader": "gdshader"
+  },
+
+  // ── .godot/ 은 엔진 캐시다. 검색·감시 대상에서 빼면 체감 속도가 크게 오른다 ──
+  "files.exclude": {
+    "**/.godot": true
+  },
+  "files.watcherExclude": {
+    "**/.godot/**": true
+  },
+  "search.exclude": {
+    "**/.godot": true,
+    "**/build": true,
+    "**/export": true
+  },
+
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true
+}

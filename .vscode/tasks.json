@@ -1,0 +1,98 @@
+{
+  "version": "2.0.0",
+
+  // godot-tools 2.7.1 은 problemMatcher 를 제공하지 않으므로 각 태스크에
+  // 인라인으로 정의한다(tasks.json 에서는 이름을 새로 만들 수 없다).
+  // Godot 의 스크립트 에러는 컴파일/런타임 모두 아래 2줄 형태다:
+  //   SCRIPT ERROR: Parse Error: Expected expression as the function argument.
+  //      at: GDScript::reload (res://scripts/foo.gd:5)
+  "tasks": [
+    {
+      // Godot 에디터를 이 프로젝트로 연다. 씬 편집 + LSP 서버(6005) 제공.
+      // VSCode 에서 자동완성을 쓰려면 이 태스크가 떠 있어야 한다.
+      "label": "Godot: 에디터 열기",
+      "type": "process",
+      "command": "${config:godotTools.editorPath.godot4}",
+      "args": ["--editor", "--path", "${workspaceFolder}"],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "never", "panel": "dedicated" }
+    },
+    {
+      // 터미널에 stdout 이 그대로 찍히는 실행. print() 디버깅에 가장 빠르다.
+      // 브레이크포인트가 필요하면 F5(launch.json)를 쓸 것.
+      "label": "Godot: 프로젝트 실행 (터미널 출력)",
+      "type": "process",
+      "command": "C:\\Users\\user\\Tools\\Godot\\godot_console.exe",
+      "args": ["--path", "${workspaceFolder}"],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": {
+        "owner": "godot",
+        "source": "godot",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "severity": "error",
+        "pattern": [
+          { "regexp": "^SCRIPT ERROR:\\s*(.*)$", "message": 1 },
+          { "regexp": "^\\s*at:.*\\(res://(.+?):(\\d+)\\)\\s*$", "file": 1, "line": 2 }
+        ]
+      }
+    },
+    {
+      // 전체 .gd 파싱 검사. 커밋 전 확인용. 에러가 있으면 종료 코드 1.
+      "label": "Godot: 전체 스크립트 검증",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy", "Bypass",
+        "-File", "${workspaceFolder}\\tools\\check-scripts.ps1"
+      ],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": {
+        "owner": "godot",
+        "source": "godot",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "severity": "error",
+        "pattern": [
+          { "regexp": "^SCRIPT ERROR:\\s*(.*)$", "message": 1 },
+          { "regexp": "^\\s*at:.*\\(res://(.+?):(\\d+)\\)\\s*$", "file": 1, "line": 2 }
+        ]
+      }
+    },
+    {
+      // 지금 열려 있는 .gd 파일 하나만 문법 검사. 에디터를 안 켜도 된다.
+      "label": "Godot: 현재 스크립트 문법 검사",
+      "type": "process",
+      "command": "C:\\Users\\user\\Tools\\Godot\\godot_console.exe",
+      "args": [
+        "--headless",
+        "--path", "${workspaceFolder}",
+        "--check-only",
+        "--script", "${relativeFile}"
+      ],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": {
+        "owner": "godot",
+        "source": "godot",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "severity": "error",
+        "pattern": [
+          { "regexp": "^SCRIPT ERROR:\\s*(.*)$", "message": 1 },
+          { "regexp": "^\\s*at:.*\\(res://(.+?):(\\d+)\\)\\s*$", "file": 1, "line": 2 }
+        ]
+      }
+    },
+    {
+      // 에셋 임포트 캐시(.godot/) 재생성. 리소스 참조가 깨졌을 때 쓴다.
+      // 주의: 이 명령은 스크립트 파싱 에러를 보고하지 않는다(검증됨).
+      "label": "Godot: 에셋 재임포트",
+      "type": "process",
+      "command": "C:\\Users\\user\\Tools\\Godot\\godot_console.exe",
+      "args": ["--headless", "--path", "${workspaceFolder}", "--import"],
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# Godot 4+ 엔진 캐시/임포트 산출물 (재생성되므로 커밋하지 않음)
+.godot/
+/android/
+
+# 빌드 산출물
+/build/
+/export/
+*.translation
+
+# export_presets.cfg 에는 키스토어 비밀번호 등이 들어갈 수 있어 제외한다.
+# 팀 공유가 필요하면 민감값을 빼고 강제 추가할 것.
+export_presets.cfg
+
+# OS / 에디터
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp

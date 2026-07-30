@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // F5 기본. 브레이크포인트·변수 검사·디버그 콘솔이 모두 붙는다.
+      "name": "Godot: 프로젝트 실행 (디버그)",
+      "type": "godot",
+      "request": "launch",
+      "project": "${workspaceFolder}",
+      "debug_collisions": false,
+      "debug_paths": false,
+      "debug_navigation": false,
+      "additional_options": ""
+    },
+    {
+      // 지금 열려 있는 .tscn 만 단독 실행. 씬 단위로 빠르게 검증할 때 쓴다.
+      "name": "Godot: 현재 씬만 실행",
+      "type": "godot",
+      "request": "launch",
+      "project": "${workspaceFolder}",
+      "scene": "current",
+      "additional_options": ""
+    },
+    {
+      // 콜리전 shape / 내비 메시를 화면에 그려서 실행. 물리 디버깅용.
+      "name": "Godot: 실행 (콜리전 표시)",
+      "type": "godot",
+      "request": "launch",
+      "project": "${workspaceFolder}",
+      "debug_collisions": true,
+      "debug_paths": true,
+      "debug_navigation": true,
+      "additional_options": ""
+    },
+    {
+      // Godot 에디터에서 직접 실행(F5)한 게임에 뒤늦게 붙을 때.
+      // 6006 은 Godot 의 DAP 포트다 (LSP 6005 와 다름).
+      "name": "Godot: 실행 중인 게임에 attach",
+      "type": "godot",
+      "request": "attach",
+      "address": "127.0.0.1",
+      "port": 6006
+    }
+  ]
+}
