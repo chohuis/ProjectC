@@ -54,7 +54,8 @@ LSP 서버가 에디터 안에서 돌기 때문이다 (127.0.0.1:6005).
 
 | 문서 | 내용 |
 | --- | --- |
-| [docs/00-concept.md](docs/00-concept.md) | 게임 컨셉, 코어 루프 — **여기부터 채운다** |
+| [docs/brief.md](docs/brief.md) | **기획 브리프 (입력용 양식) — 여기부터 채운다** |
+| [docs/00-concept.md](docs/00-concept.md) | 게임 컨셉, 코어 루프 (브리프에서 도출) |
 | [docs/01-gdd.md](docs/01-gdd.md) | 게임 디자인 문서, 시스템·씬 구조 |
 | [docs/02-scope.md](docs/02-scope.md) | 스코프, 마일스톤 |
 | [docs/03-tech.md](docs/03-tech.md) | 기술 결정 기록, 알려진 함정 |

@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="ProjectC"
-config/description="ProjectC - 2D game"
+config/description="ProjectC - 2D PC game (Steam)"
 run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [debug]
@@ -29,10 +29,6 @@ window/size/viewport_height=1080
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
-
-[dotnet]
-
-project/assembly_name="ProjectC"
 
 [input]
 
@@ -73,4 +69,5 @@ pause={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="forward_plus"
+textures/canvas_textures/default_texture_filter=0
