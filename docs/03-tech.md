@@ -121,7 +121,7 @@ SCRIPT ERROR: Parse Error: Expected expression as the function argument.
 
 ### Steam 관련
 
-M4 에서 다룰 것들. 지금 정할 필요는 없지만 미리 알아둘 것:
+출시 준비 단계에서 다룰 것들. 지금 정할 필요는 없지만 미리 알아둘 것:
 
 - **Steamworks 연동** (실적/클라우드 세이브)은 엔진 기본 기능이 아니다.
   GDScript 에서 쓰려면 [GodotSteam](https://godotsteam.com/) 같은 GDExtension 이 필요하다.

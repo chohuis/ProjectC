@@ -59,6 +59,7 @@ LSP 서버가 에디터 안에서 돌기 때문이다 (127.0.0.1:6005).
 | [docs/01-gdd.md](docs/01-gdd.md) | 게임 디자인 문서, 시스템·씬 구조 |
 | [docs/02-scope.md](docs/02-scope.md) | 스코프, 마일스톤 |
 | [docs/03-tech.md](docs/03-tech.md) | 기술 결정 기록, 알려진 함정 |
+| [docs/04-elements.md](docs/04-elements.md) | **요소 체크리스트** — 기획 진행 상황을 한눈에 |
 
 ## 폴더 구조
 
