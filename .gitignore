@@ -11,6 +11,11 @@
 # 팀 공유가 필요하면 민감값을 빼고 강제 추가할 것.
 export_presets.cfg
 
+# 문서 빌드 중간 산출물
+# docs/screens/src/p*.html 을 이어 붙인 것. build.ps1 이 만들고 지운다.
+# PDF 는 결과물이라 커밋한다.
+docs/screens/spec.html
+
 # OS / 에디터
 Thumbs.db
 desktop.ini

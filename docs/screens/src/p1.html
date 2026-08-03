@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>ProjectC 화면 설계서</title>
+<style>
+  @page{ size:A4 portrait; margin:14mm 13mm; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; box-sizing:border-box }
+  :root{
+    --ink:#14181C; --ink2:#3E4750; --mut:#78838C; --line:#D6DCE1; --line2:#E8ECEF;
+    --acc:#9A5510; --ok:#2F6E34; --warn:#8A5A10; --dan:#A63E2C;
+    --sans:"Malgun Gothic","맑은 고딕",sans-serif;
+    --mono:Consolas,"D2Coding","Courier New",monospace;
+  }
+  html,body{margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--ink);font-size:9.4pt;line-height:1.6;background:#fff}
+
+  /* ── 표지 ── */
+  .cover{height:252mm;display:flex;flex-direction:column;page-break-after:always}
+  .cover .top{flex:1}
+  .cover .kick{font-family:var(--mono);font-size:8pt;letter-spacing:.24em;color:var(--acc);margin:0 0 10mm}
+  .cover h1{font-size:30pt;line-height:1.1;margin:0 0 4mm;letter-spacing:-.02em;font-weight:700}
+  .cover .sub{font-size:12pt;color:var(--ink2);margin:0 0 14mm;line-height:1.5}
+  .cover .meta{border-top:1.5pt solid var(--ink);padding-top:5mm;
+               display:grid;grid-template-columns:26mm 1fr;row-gap:2mm;font-size:9pt}
+  .cover .meta dt{color:var(--mut)}
+  .cover .meta dd{margin:0}
+  .cover .fix{border-left:2pt solid var(--acc);padding:3mm 0 3mm 5mm;margin:0 0 10mm;
+              font-size:9pt;color:var(--ink2);line-height:1.85}
+  .cover .fix b{color:var(--ink)}
+
+  /* ── 공통 ── */
+  .page{page-break-before:always}
+  h2{font-size:17pt;font-weight:700;letter-spacing:-.02em;margin:0 0 1mm;
+     padding-bottom:2mm;border-bottom:1.5pt solid var(--ink);
+     display:flex;align-items:baseline;gap:3mm}
+  h2 .id{font-family:var(--mono);font-size:8.5pt;color:#fff;background:var(--acc);
+         padding:.6mm 2mm;border-radius:1mm;font-weight:400}
+  h2 .rt{margin-left:auto;font-size:8pt;color:var(--mut);font-weight:400;font-family:var(--mono)}
+  h3{font-size:11pt;font-weight:700;margin:6mm 0 2mm;letter-spacing:-.01em;
+     color:var(--ink);display:flex;align-items:baseline;gap:2.5mm}
+  h3 .n{font-family:var(--mono);font-size:8pt;color:var(--acc)}
+  h4{font-size:9.4pt;font-weight:700;margin:4mm 0 1.5mm}
+  p{margin:0 0 2.5mm;color:var(--ink2)}
+  p b,li b,td b{color:var(--ink)}
+  p.lead{font-size:10pt;color:var(--ink2);margin:2mm 0 4mm;line-height:1.65}
+  ul{margin:0 0 3mm;padding-left:5mm}
+  li{margin:0 0 1mm;color:var(--ink2)}
+  code{font-family:var(--mono);font-size:8.4pt;background:#F0F3F5;padding:.3mm 1.2mm;border-radius:.8mm;color:var(--ink)}
+
+  table{width:100%;border-collapse:collapse;font-size:8.6pt;margin:0 0 4mm}
+  th,td{padding:1.6mm 2.4mm;border-bottom:.5pt solid var(--line);text-align:left;vertical-align:top}
+  thead th{color:var(--mut);font-weight:400;font-size:7.6pt;letter-spacing:.06em;
+           border-bottom:.8pt solid var(--ink2);text-transform:uppercase}
+  tbody th{font-weight:700;color:var(--ink);white-space:nowrap}
+  td{color:var(--ink2)}
+  table.tight td,table.tight th{padding:1.1mm 2.4mm}
+  .ok{color:var(--ok);font-weight:600}.bad{color:var(--dan);font-weight:600}.mid{color:var(--warn);font-weight:600}
+  .idc{font-family:var(--mono);font-size:8.2pt;color:var(--acc);white-space:nowrap}
+
+  .note{border-left:2pt solid var(--line);padding:1mm 0 1mm 4mm;margin:0 0 4mm;
+        font-size:8.8pt;color:var(--ink2);line-height:1.65}
+  .note b{color:var(--ink)}
+  .flag{border:.8pt solid var(--acc);background:#FDF6EE;padding:2.5mm 3.5mm;margin:0 0 4mm;
+        font-size:8.8pt;color:#6E3D0B;line-height:1.6}
+  .flag b{color:#4A2905}
+
+  pre{font-family:var(--mono);font-size:8.2pt;line-height:1.55;color:var(--ink2);
+      background:#F4F6F8;border:.5pt solid var(--line);border-radius:1mm;
+      padding:3mm 3.5mm;margin:0 0 4mm;white-space:pre;overflow:hidden}
+  pre b{color:var(--ink)}
+
+  .cap{font-family:var(--mono);font-size:7.4pt;letter-spacing:.14em;color:var(--mut);
+       margin:0 0 1.5mm;text-transform:uppercase}
+
+  /* 스크린샷 프레임 — 940px 렌더 후 축소 */
+  .frame{position:relative;overflow:hidden;border:.5pt solid #A8B2BA;border-radius:1mm;
+         margin:0 0 2mm;background:#141C28}
+  .frame > .g{width:940px;transform:scale(.7395);transform-origin:top left}
+  .frame.h340{height:252px}.frame.h400{height:296px}
+  .frame.h420{height:311px}.frame.h432{height:320px}.frame.h452{height:335px}
+  .shotnote{font-size:7.8pt;color:var(--mut);margin:0 0 4mm;line-height:1.5}
+
+  /* 색 스와치 */
+  .sw{display:flex;gap:0;margin:0 0 3mm;border:.5pt solid var(--line);border-radius:1mm;overflow:hidden}
+  .sw div{flex:1;height:11mm;display:flex;flex-direction:column;justify-content:flex-end;
+          padding:1mm 1.5mm;font-family:var(--mono);font-size:6.6pt}
+
+/* ══════════ 게임 셸 (C 새벽) ══════════ */
+  .g{--bg2:#141C28;--ch:#0F1620;--pn:#1A2432;--pn2:#101822;--bd:#26344A;--bd2:#1C2836;
+     --tx:#E8E2D6;--tx2:#9AA8BC;--tx3:#64748C;--sel:#D9863C;--selT:#141C28;
+     --ok:#79B87E;--wn:#DCAE5E;--dn:#D46B58;--row:#182130;--hdr:#1A2432;
+     --us:#4A7FC4;--th:#BF4238;--gk:#E0C246;--g1:#2E5238;--g2:#294C33;--gl:rgba(232,242,230,.42);
+     background:var(--bg2);color:var(--tx);display:grid;grid-template-rows:auto 1fr auto;
+     overflow:hidden;font-size:11.5px;font-family:var(--sans);line-height:1.5}
+  .g.free{grid-template-rows:1fr}
+  .g.h340{height:340px}.g.h400{height:400px}.g.h420{height:420px}
+  .g.h432{height:432px}.g.h452{height:452px}
+  .ttl{background:var(--ch);border-bottom:1px solid var(--bd);display:flex;align-items:center;
+       height:26px;padding:0 9px;gap:9px;flex:none}
+  .ttl .nv u{text-decoration:none;color:var(--tx3);background:var(--pn);border:1px solid var(--bd);
+             width:16px;height:15px;display:inline-grid;place-items:center;font-size:9px;border-radius:2px}
+  .ttl .cb{color:var(--tx3);font-size:10.5px}.ttl .cb i{font-style:normal;color:var(--tx)}
+  .ttl .rt{margin-left:auto;font-size:10.5px;color:var(--tx2)}
+  .mid{display:grid;grid-template-columns:158px 1fr;overflow:hidden}
+  .tr{background:var(--pn2);border-right:1px solid var(--bd);padding:6px 0;overflow:hidden}
+  .tr .cl{padding:0 10px 7px;border-bottom:1px solid var(--bd);margin-bottom:5px}
+  .tr .cl b{display:block;color:var(--tx);font-size:12.5px}
+  .tr .cl i{font-style:normal;color:var(--tx3);font-size:9.5px;display:block}
+  .tr p{margin:6px 10px 2px;font-size:8.5px;letter-spacing:.18em;color:var(--tx3);opacity:.8}
+  .tr a{display:flex;align-items:center;gap:6px;padding:3px 10px;color:var(--tx2);
+        text-decoration:none;font-size:11px}
+  .tr a.on{background:var(--sel);color:var(--selT)}
+  .tr a em{margin-left:auto;font-style:normal;font-size:9px;background:var(--dn);color:#fff;
+           border-radius:7px;padding:0 5px;line-height:12px}
+  .mn{display:flex;flex-direction:column;overflow:hidden}
+  .tb{display:flex;border-bottom:1px solid var(--bd);background:var(--ch);flex:none}
+  .tb span{padding:5px 12px;color:var(--tx3);border-right:1px solid var(--bd);font-size:11px}
+  .tb span.on{background:var(--bg2);color:var(--tx);box-shadow:inset 0 -2px 0 var(--sel)}
+  .sp{display:flex;border-bottom:1px solid var(--bd);background:var(--ch);flex:none}
+  .sp div{padding:6px 12px;border-right:1px solid var(--bd)}
+  .sp i{font-style:normal;display:block;color:var(--tx3);font-size:9px}
+  .sp b{font-size:12px;color:var(--tx);font-weight:600}
+  .bdy{flex:1;overflow:hidden}
+  .br{background:var(--ch);border-top:1px solid var(--bd);display:flex;align-items:center;
+      height:28px;padding:0 10px;gap:14px;font-size:10.5px;color:var(--tx2);flex:none}
+  .br b{color:var(--tx)}
+  .br .go{margin-left:auto;background:var(--sel);color:var(--selT);padding:3px 14px;border-radius:2px;font-size:11px}
+  .k{font-size:9px;letter-spacing:.16em;color:var(--tx3);margin:0 0 5px}
+  .pan{background:var(--pn);border-left:1px solid var(--bd);padding:9px 11px;overflow:hidden}
+  .u-g{color:#79B87E}.u-y{color:#DCAE5E}.u-r{color:#D46B58}
+  .nn{font-variant-numeric:tabular-nums;text-align:right}
+  .mn_{font-family:var(--mono)}
+  table.t{width:100%;border-collapse:collapse;font-size:11px;margin:0}
+  table.t th{background:var(--hdr);color:var(--tx3);text-align:left;font-weight:400;
+             padding:3px 8px;border-bottom:1px solid var(--bd);font-size:10px;text-transform:none;letter-spacing:0}
+  table.t td{padding:2.5px 8px;border-bottom:1px solid var(--bd2);color:var(--tx)}
+  table.t tr:nth-child(even) td{background:var(--row)}
+  table.t tr.sel td{background:var(--sel);color:var(--selT)}
+  .rw{display:flex;gap:7px;align-items:center;font-size:11px;padding:1.5px 0}
+  .bar{flex:1;height:5px;background:#0F1620;border:1px solid var(--bd)}
+  .bar i{display:block;height:100%}
+  .chip{display:inline-block;font-size:9.5px;padding:0 5px;border-radius:2px;margin:0 3px 3px 0}
+  .warnbox{border-left:2px solid var(--dn);background:rgba(212,107,88,.1);padding:5px 8px;
+           margin-bottom:5px;font-size:10.5px;color:#EFB2A4}
+  .warnbox b{display:block;color:#F5C8BC;font-size:11px}
+  .dw{background:var(--pn2);border-top:2px solid var(--sel);padding:8px 12px;flex:none}
+  .dw .kk{font-size:9px;letter-spacing:.16em;color:var(--tx3);margin:0 0 3px}
+  .dw .ln{font-size:12px;color:var(--tx);margin:0 0 7px;line-height:1.55}
+  .dw .ln em{font-style:normal;color:var(--sel);font-weight:600}
+  .dw .ch{background:var(--pn);border:1px solid var(--bd);padding:2px 9px;font-size:11px;
+          margin:0 5px 0 0;display:inline-block;border-radius:2px;color:var(--tx2)}
+  .dw .ch.on{background:var(--sel);color:var(--selT);border-color:var(--sel)}
+  .pit{position:relative;overflow:hidden;
+       background:repeating-linear-gradient(90deg,var(--g1) 0 var(--st,26px),var(--g2) var(--st,26px) calc(var(--st,26px)*2))}
+  .pit .mm{position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--gl)}
+  .pit .cc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:2px solid var(--gl);border-radius:50%}
+  .pit .eg{position:absolute;inset:6px;border:2px solid var(--gl)}
+  .pit .bx{position:absolute;top:50%;transform:translateY(-50%);border:2px solid var(--gl)}
+  .dk{position:absolute;transform:translate(-50%,-50%);text-align:center;white-space:nowrap;z-index:2}
+  .dk .c{border-radius:50%;display:grid;place-items:center;font-family:var(--mono);color:#fff;
+         font-weight:700;margin:0 auto;box-shadow:0 1px 2px rgba(0,0,0,.5);width:15px;height:15px;font-size:8.5px}
+  .dk .ring{border-radius:50%;padding:2px;display:grid;place-items:center;margin:0 auto}
+  .dk.u .c{background:var(--us)}.dk.t .c{background:var(--th)}.dk.k .c{background:var(--gk);color:#2A2410}
+  .dk .nm{display:block;font-size:8.5px;color:#EFF4EC;text-shadow:0 1px 2px rgba(0,0,0,.9);margin-top:1px}
+  .dk.ball{z-index:3}.dk.ball .c{background:#F4F1E6;border:1px solid #6E6A5E;width:6px;height:6px}
+  .dk.hold .c{box-shadow:0 0 0 2px #F4F1E6,0 1px 2px rgba(0,0,0,.5)}
+  .dk.ign .c{box-shadow:0 0 0 2px #D9863C,0 1px 2px rgba(0,0,0,.5)}
+  .dk.wn_ .c{box-shadow:0 0 0 2px #DCAE5E,0 1px 2px rgba(0,0,0,.5)}
+  .dk.bad_ .c{box-shadow:0 0 0 2px #D46B58,0 1px 2px rgba(0,0,0,.5)}
+  .fm{position:relative;background:repeating-linear-gradient(90deg,#2E5238 0 32px,#294C33 32px 64px);
+      margin:10px;border:2px solid rgba(232,242,230,.3)}
+  .fm::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(232,242,230,.3)}
+  .fp{position:absolute;transform:translate(-50%,-50%);text-align:center}
+  .fp i{display:block;width:22px;height:22px;border-radius:50%;background:#4A7FC4;color:#fff;
+        font-style:normal;font-weight:700;font-size:10px;line-height:22px;margin:0 auto 2px;
+        font-family:var(--mono);box-shadow:0 1px 2px rgba(0,0,0,.5)}
+  .fp span{font-size:9px;text-shadow:0 1px 2px rgba(0,0,0,.9)}
+  .fp.gk i{background:#E0C246;color:#2A2410}
+  .fp.mt i{background:#3A4C60;color:#7C8CA0;border:1px dashed #64748C}
+  .wk{display:grid;grid-template-columns:44px repeat(7,1fr);gap:2px;padding:9px 11px}
+  .wk .hd{font-size:9.5px;color:var(--tx3);text-align:center;padding:2px 0}
+  .wk .lb{font-size:9.5px;color:var(--tx3);display:flex;align-items:center}
+  .wk .cell{background:var(--pn);border:1px solid var(--bd2);min-height:40px;padding:3px 4px;
+            font-size:9.5px;line-height:1.3}
+  .wk .cell.busy{background:#1D2836;color:var(--tx3)}
+  .wk .cell.act{border-color:var(--sel);background:rgba(217,134,60,.13);color:var(--tx)}
+  .wk .cell.mch{border-color:var(--ok);background:rgba(121,184,126,.14);color:#C4E4C6}
+  .msg{padding:4px 0;border-bottom:1px solid var(--bd2);font-size:11px;display:flex;gap:8px}
+  .msg .who{width:52px;color:var(--tx2);flex:none}
+  .msg .tx{flex:1}.msg .rd{color:var(--tx3);font-size:9.5px;flex:none;width:38px;text-align:right}
+  .msg.me .who{color:var(--sel)}
+  .ord{padding:8px 13px;border-bottom:1px solid var(--bd2)}
+  .ord .lb{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+  .ord .lb b{font-size:12px}.ord .lb span{font-size:10px;color:var(--tx3)}
+  .ord .lb .acc{margin-left:auto;font-family:var(--mono);font-size:10.5px}
+  .seg{display:flex;border:1px solid var(--bd);border-radius:2px;overflow:hidden;width:max-content}
+  .seg span{padding:3px 13px;font-size:11px;color:var(--tx2);border-right:1px solid var(--bd);background:var(--pn)}
+  .seg span:last-child{border-right:none}
+  .seg span.on{background:var(--sel);color:var(--selT);font-weight:600}
+  .ord .hint{font-size:10px;color:var(--tx3);margin-top:3px;line-height:1.5}
+  .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:9px 11px}
+  .fcard{border:1px solid var(--bd);background:var(--pn);overflow:hidden}
+  .fcard.on{border-color:var(--sel);box-shadow:0 0 0 1px var(--sel)}
+  .fcard .t1{display:flex;align-items:baseline;gap:5px;padding:3px 6px;background:rgba(0,0,0,.25)}
+  .fcard .t1 b{font-family:var(--mono);font-size:11px}
+  .fcard .t1 span{font-size:8.5px;color:var(--tx3);margin-left:auto}
+  .fcard .t2{padding:3px 6px;font-size:9px;color:var(--tx3);display:flex;gap:5px;align-items:center}
+  .fcard .sk{flex:1;height:3px;background:#0F1620;border:1px solid var(--bd)}
+  .fcard .sk i{display:block;height:100%}
+  .mp{position:relative;height:46px;background:repeating-linear-gradient(90deg,#2E5238 0 12px,#294C33 12px 24px)}
+  .mp::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(232,242,230,.3)}
+  .mp i{position:absolute;width:6px;height:6px;border-radius:50%;background:#4A7FC4;
+        transform:translate(-50%,-50%);box-shadow:0 1px 1px rgba(0,0,0,.5)}
+  .mp i.g{background:#E0C246}.mp i.f{background:#7FB8D6}
+  .who2{display:flex;gap:5px;align-items:center;font-size:10.5px;padding:1.5px 0}
+  .who2 .dot{width:6px;height:6px;border-radius:50%;flex:none}
+  .accbar{height:5px;background:#0F1620;border:1px solid var(--bd);width:70px;display:inline-block;
+          vertical-align:middle;margin-right:5px}
+  .accbar i{display:block;height:100%}
+</style></head><body>
+
+<!-- ═══════════════ 표지 ═══════════════ -->
+<section class="cover">
+  <div class="top">
+    <p class="kick">PROJECTC · SCREEN SPECIFICATION</p>
+    <h1>화면 설계서</h1>
+    <p class="sub">조기축구 매니저 · UI 컨셉 아트와 화면별 상세<br>
+      주중 관리 화면 14 · 경기 화면 3 · 오버레이 7</p>
+    <div class="fix">
+      <b>확정 사항</b><br>
+      UI 골격 <b>데이터 밀집형(FM 계열)</b> · 스킨 <b>C 새벽</b> 기본, A·B·D 설정 지원<br>
+      경기 뷰 <b>바둑알 + 체력 링</b> — 아트 0장. 도트 스프라이트는 선택 항목<br>
+      전술 <b>지시 5종 × 3단 + 포메이션 8종</b>, 축은 깊이가 아니라 <b>수용률</b><br>
+      인원 미달 시 <b>경기 취소</b> — 미달 진형은 만들지 않는다
+    </div>
+  </div>
+  <dl class="meta">
+    <dt>문서</dt><dd>05-ui.md 를 화면 단위로 펼친 것</dd>
+    <dt>기준 해상도</dt><dd>1920 × 1080 (최소 1280 × 720)</dd>
+    <dt>구현 단위</dt><dd>화면 24개 · 탭 포함 57개</dd>
+    <dt>근거 문서</dt><dd>01-gdd.md · 05-ui.md · 04-elements.md (E57 · E80 · E82)</dd>
+    <dt>표기</dt><dd>화면 <code>S-nn</code> · 경기 <code>S-Mn</code> · 오버레이 <code>O-n</code></dd>
+  </dl>
+</section>
+
+<!-- ═══════════════ 읽는 법 ═══════════════ -->
+<section class="page">
+  <h2><span class="id">0</span>이 문서를 읽는 법</h2>
+  <p class="lead">
+    화면마다 <b>목적 · 진입 경로 · 요약 스트립 · 탭별 상세 · 설계 노트</b> 순으로 적었다.
+    시안이 있는 화면은 축소 스크린샷을 함께 싣고, 아직 그리지 않은 화면은 사양만 적었다.
+  </p>
+
+  <h3><span class="n">0.1</span>각 화면 항목의 뜻</h3>
+  <table>
+    <thead><tr><th style="width:32mm">항목</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><th>목적</th><td>이 화면이 없으면 무엇을 못 하는가. 한 화면에 하나의 일만 시킨다</td></tr>
+      <tr><th>진입 / 나가기</th><td>어디서 들어오고 어디로 빠지는가. 네비게이션 3단 안에 있어야 한다</td></tr>
+      <tr><th>요약 스트립</th><td>화면 상단에 <b>늘 떠 있는 숫자</b> 4~6개. 화면마다 다르다</td></tr>
+      <tr><th>탭</th><td><b>보이는 것</b> / <b>여기서 하는 결정</b> / <b>근거</b> 세 열로 적었다.
+        "여기서 하는 결정"이 비어 있는 탭은 열람 전용이다</td></tr>
+      <tr><th>설계 노트</th><td>왜 이렇게 했는지, 무엇을 일부러 넣지 않았는지</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="n">0.2</span>스크린샷에 대하여</h3>
+  <div class="note">
+    모든 스크린샷은 <b>기본 스킨 C 새벽</b>으로 렌더했다.
+    데이터는 <b>같은 세이브의 같은 주(2029년 3월 2주차)</b>로 통일했다 —
+    화면을 옮겨 다녀도 같은 사람, 같은 숫자가 이어진다.
+    <b>이규민(28세 · MF · 이탈 위험 5/5)</b>이 여러 화면에 걸쳐 나오는데,
+    한 사람이 시스템을 통과하는 모습을 보이려는 의도다.
+  </div>
+
+  <h3><span class="n">0.3</span>색이 뜻하는 것</h3>
+  <p>색은 세 계열로 <b>완전히 분리</b>되어 있다. 스킨을 바꿔도 상태색의 의미는 안 흔들린다.</p>
+  <table class="tight">
+    <thead><tr><th style="width:24mm">계열</th><th style="width:34mm">예</th><th>규칙</th></tr></thead>
+    <tbody>
+      <tr><th>크롬</th><td>배경 · 패널 · 보더 · <b>선택색</b></td>
+        <td>스킨마다 바뀐다. <b>선택색이 스킨의 성격을 결정하는 단 하나의 색</b></td></tr>
+      <tr><th>상태</th><td><span class="ok">좋음</span> · <span class="mid">주의</span> · <span class="bad">나쁨</span></td>
+        <td><b>스킨과 무관하게 의미 고정.</b> 참석/불참, 수입/지출, 안전/위험</td></tr>
+      <tr><th>팀</th><td>우리 파랑 · 상대 빨강 · GK 노랑</td>
+        <td>경기 화면 전용. 위 둘과 겹치지 않는다</td></tr>
+    </tbody>
+  </table>
+  <div class="sw">
+    <div style="background:#141C28;color:#8296AE">#141C28 배경</div>
+    <div style="background:#1A2432;color:#8296AE">#1A2432 패널</div>
+    <div style="background:#26344A;color:#B4C2D4">#26344A 보더</div>
+    <div style="background:#D9863C;color:#231204">#D9863C 선택</div>
+    <div style="background:#79B87E;color:#0C2010">#79B87E 좋음</div>
+    <div style="background:#DCAE5E;color:#2A1E06">#DCAE5E 주의</div>
+    <div style="background:#D46B58;color:#2A0C06">#D46B58 나쁨</div>
+  </div>
+  <div class="note">
+    <b>능력 바와 기질 바는 또 다른 색을 쓴다.</b> 상태색을 쓰면 "기술 62"가 나쁜 값처럼 보인다.
+    능력은 선택색 계열(파랑), 기질은 중립 계열(보라)로 간다.
+  </div>
+</section>
+
+<!-- ═══════════════ 1. 시스템 개요 ═══════════════ -->
+<section class="page">
+  <h2><span class="id">1</span>골격과 네비게이션<span class="rt">05-ui.md 1~2</span></h2>
+  <p class="lead">
+    네 영역으로 고정한다. <b>모든 화면이 같은 골격을 쓰고 바뀌는 것은 본문뿐이다.</b>
+    타이틀 바와 상태 바는 어떤 화면에서도 사라지지 않는다.
+  </p>
+
+<pre>┌─────────────────────────────────────────────────────────────────┐
+│ <b>타이틀 바</b>  h28   ◀ ▶  대신동FC › 회원 명단 › <b>이규민</b>      2029.03 2주차 │
+├───────────────┬─────────────────────────────────────────────────┤
+│               │ <b>탭 바</b>     h26   개요 │ 능력 │ 출전 이력 │ 관계      │
+│  <b>트리</b>          ├─────────────────────────────────────────────────┤
+│  w150~180     │ <b>요약 스트립</b>  h40   다음 경기 · 참석 · 잔액  (선택)  │
+│  13항목       ├─────────────────────────────────────────────────┤
+│               │                                                 │
+│  운영 5       │ <b>본문</b>       화면마다 다름                          │
+│  클럽 4       │                                                 │
+│  기록 4       │                                                 │
+├───────────────┴─────────────────────────────────────────────────┤
+│ <b>상태 바</b>  h28   회원 12명 · 남은 행동 3 · <b>인원 2 부족</b>   [ 주 진행 ▶ ] │
+└─────────────────────────────────────────────────────────────────┘</pre>
+
+  <table>
+    <thead><tr><th style="width:26mm">영역</th><th style="width:24mm">치수</th><th>규칙</th></tr></thead>
+    <tbody>
+      <tr><th>타이틀 바</th><td><code>h28</code> 고정</td>
+        <td>뒤로/앞으로 · 경로 · 날짜. <b>화면 이동 히스토리는 여기서만 관리한다.</b>
+          상세로 파고들어도 경로가 남아 길을 잃지 않는다. 설정도 여기서 연다</td></tr>
+      <tr><th>트리</th><td><code>w150~180</code></td>
+        <td>3그룹 13항목 고정. <b>스크롤 없음.</b> 뱃지로 "볼 게 있는 화면"을 표시하고
+          <b>0이면 표시하지 않는다</b></td></tr>
+      <tr><th>탭 바</th><td><code>h26</code></td>
+        <td>화면 안의 관점 전환. <b>최대 6개.</b> 넘치면 화면을 쪼갠다</td></tr>
+      <tr><th>요약 스트립</th><td><code>h40</code> 선택</td>
+        <td>4~6칸. 그 화면에서 늘 봐야 하는 숫자. <b>화면마다 내용이 다르다</b></td></tr>
+      <tr><th>본문</th><td>나머지</td><td>표가 기본. 상세 화면은 3분할(프로필 / 수치 / 경고)</td></tr>
+      <tr><th>상태 바</th><td><code>h28</code> 고정</td>
+        <td>전역 요약 + <b>주 진행 버튼.</b> 주간 루프의 확정 지점은 어느 화면에서도 같은 자리</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="n">1.1</span>네비게이션은 3단을 넘지 않는다</h3>
+  <table class="tight">
+    <thead><tr><th style="width:14mm">단</th><th style="width:34mm">수단</th><th style="width:26mm">용량</th><th>바뀌는 것</th></tr></thead>
+    <tbody>
+      <tr><th>1단</th><td>좌측 트리</td><td>13 (최대 20)</td><td>화면 전체</td></tr>
+      <tr><th>2단</th><td>상단 탭</td><td>화면당 최대 6</td><td>본문만. 스트립은 유지</td></tr>
+      <tr><th>3단</th><td>표 행 더블클릭</td><td>—</td><td>상세로 진입. 경로에 한 칸 추가</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    회원 상세에서 또 파고들어야 한다면 그건 <b>탭으로 만든다.</b>
+    경로가 <code>대신동FC › 회원 명단 › 이규민</code> 보다 길어지지 않는다.
+  </div>
+
+  <h3><span class="n">1.2</span>트리 구성</h3>
+  <table class="tight">
+    <thead><tr><th style="width:18mm">그룹</th><th style="width:62mm">항목</th><th>뱃지</th></tr></thead>
+    <tbody>
+      <tr><th>운영</th><td>이번 주 · 회원 명단 · 라인업 · 일정 · 단톡방</td>
+        <td>명단 = 주의가 필요한 회원 수 / 단톡방 = 안 읽은 메시지</td></tr>
+      <tr><th>클럽</th><td>재정 · 영입 · 구장 · 규칙</td>
+        <td>재정 = 미납 발생 시 <code>!</code> / 영입 = 새 지원자 수</td></tr>
+      <tr><th>기록</th><td>경기 기록 · 상대팀 · 연대기 · 내 정보</td><td>없음</td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="n">1.3</span>키보드</h3>
+  <table class="tight">
+    <thead><tr><th style="width:30mm">입력</th><th>동작</th></tr></thead>
+    <tbody>
+      <tr><th><code>↑ ↓</code></th><td>표 행 이동</td></tr>
+      <tr><th><code>Enter</code></th><td>상세 진입</td></tr>
+      <tr><th><code>Esc</code></th><td>뒤로</td></tr>
+      <tr><th><code>Tab</code></th><td>탭 전환</td></tr>
+      <tr><th>헤더 클릭</th><td>해당 열로 정렬</td></tr>
+      <tr><th>이름 hover</th><td>빠른보기 카드 (O-5) — 화면 이동 없이 확인</td></tr>
+      <tr><th>주 진행</th><td><b>버튼 클릭만.</b> 단축키를 주지 않는다 — 되돌릴 수 없기 때문이다</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="page">
+  <h2><span class="id">2</span>컴포넌트와 스킨<span class="rt">05-ui.md 4~7</span></h2>
+  <p class="lead">
+    <b>12개로 전 화면을 만든다.</b> 새 화면을 추가할 때 새 컴포넌트를 만들지 않는 것이 원칙이다.
+  </p>
+  <table>
+    <thead><tr><th style="width:32mm">컴포넌트</th><th style="width:30mm">쓰이는 곳</th><th>규칙</th></tr></thead>
+    <tbody>
+      <tr><th>데이터 표</th><td>S-01·02·07·11·12</td>
+        <td>줄무늬 · 열 정렬 · 행 선택 · 더블클릭 드릴다운. <b>행 높이 15~20px</b> — 30명이 스크롤 없이 들어간다</td></tr>
+      <tr><th>속성 바</th><td>S-03 · S-14</td>
+        <td>라벨 + 바 + 수치. <b>능력(파랑)과 기질(보라)은 색을 다르게</b></td></tr>
+      <tr><th>요약 스트립 셀</th><td>전 화면</td><td>작은 라벨 + 큰 값. 4~6개</td></tr>
+      <tr><th>상태 칩</th><td>S-03 · S-06</td><td>회원 상태 태그. <code>출전 불만 5/5</code> <code>회비 미납</code></td></tr>
+      <tr><th>경고 박스</th><td>S-03·07·M1</td><td>좌측 색 스트라이프 + 제목 + 한 줄 설명</td></tr>
+      <tr><th>진행 바</th><td>S-07</td><td>유니폼 적립 같은 목표 대비 진척</td></tr>
+      <tr><th>폼 스파크</th><td>S-02 · S-03</td>
+        <td><code>●◐○·</code> 최근 8주 출전을 한 줄로. <b>추이가 한 칸에 압축된다</b></td></tr>
+      <tr><th>트리 뱃지</th><td>트리</td><td>숫자 또는 <code>!</code>. 0이면 표시하지 않음</td></tr>
+      <tr><th>버튼</th><td>전 화면</td><td>주요 1개(선택색) · 보조 다수 · 위험(빨강)은 확인 오버레이 동반</td></tr>
+      <tr><th>3단 세그먼트</th><td>S-04 전술</td><td>지시 선택. <b>3단 고정</b> — 0~20 스케일을 쓰지 않는다</td></tr>
+      <tr><th>이벤트 드로어</th><td>전 화면</td><td>상태 바 위로 열린다. <b>O-6 면접도 이걸 쓴다</b></td></tr>
+      <tr><th>바둑알 + 체력 링</th><td>S-M2</td><td>원 + 등번호 + 둘레 게이지. 전부 <code>_draw()</code></td></tr>
+    </tbody>
+  </table>
+
+  <h3><span class="n">2.1</span>타이포 스케일 (1920 기준)</h3>
+  <table class="tight">
+    <thead><tr><th style="width:32mm">역할</th><th style="width:24mm">크기</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><th>강조 수치</th><td><code>32 / 24px</code></td><td>잔액 · 참석 인원 · 만족도</td></tr>
+      <tr><th>화면 제목</th><td><code>15px</code></td><td>Bold</td></tr>
+      <tr><th>표 본문</th><td><code>13px</code></td><td><b>가장 많이 쓰이는 크기.</b> 숫자는 <code>tabular-nums</code></td></tr>
+      <tr><th>표 헤더 · 탭</th><td><code>11px</code></td><td></td></tr>
+      <tr><th>라벨 · 캡션</th><td><code>10px</code></td><td>자간 <code>+0.16em</code></td></tr>
+    </tbody>
+  </table>
+  <div class="flag">
+    <b>한글 최소 12px을 지킨다.</b> 10px 라벨은 한글을 쓰지 않거나 짧은 단어만 쓴다.
+    해상도를 낮추지 않는 이유이기도 하다 — 이 장르는 텍스트 밀도가 요구된다.
+  </div>
+
+  <h3><span class="n">2.2</span>스킨 4종</h3>
+  <p>골격은 하나고 <b>스킨은 색 토큰만 갈아끼운다.</b> Godot에서는 <code>Theme</code> 리소스 교체로 처리한다 —
+    스킨을 바꿔도 화면을 다시 만들지 않는다.</p>
+  <table class="tight">
+    <thead><tr><th style="width:10mm">ID</th><th style="width:22mm">이름</th><th style="width:24mm">선택색</th><th>성격</th></tr></thead>
+    <tbody>
+      <tr><th>A</th><td>클래식</td><td><code>#316AC5</code></td><td>2000년대 관리 게임. 밝은 시스템 회색, 행 높이 최소</td></tr>
+      <tr><th>B</th><td>현대</td><td><code>#3D82C4</code></td><td>다크 + 넓은 여백. 가독성 최상, 밀도 최저</td></tr>
+      <tr><th class="ok">C</th><td><b>새벽 (기본)</b></td><td><code>#D9863C</code></td>
+        <td><b>짙은 남색 + 가로등 주황.</b> 조기축구의 시간대. 밀도는 A와 같고 다른 관리 게임과 겹치지 않는다</td></tr>
+      <tr><th>D</th><td>잔디</td><td><code>#3B6E3E</code></td><td>따뜻한 종이색 + 잔디 초록. 밝은 테마</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <b>상태색은 스킨마다 재조정한다.</b> 밝은 바탕과 어두운 바탕에서
+    같은 빨강이 같은 강도로 읽히지 않는다. A·D에서는 필드 잔디색도 함께 조정한다.
+  </div>
+</section>
