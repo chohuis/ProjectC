@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
 <title>ProjectC 화면 설계서</title>
 <style>
@@ -71,12 +71,12 @@
   .cap{font-family:var(--mono);font-size:7.4pt;letter-spacing:.14em;color:var(--mut);
        margin:0 0 1.5mm;text-transform:uppercase}
 
-  /* 스크린샷 프레임 — 940px 렌더 후 축소 */
+  /* 스크린샷 프레임 — 940px 렌더 후 축소.
+     zoom 은 transform 과 달리 레이아웃 높이에 반영되므로 프레임이 내용에 맞춰 늘어난다.
+     고정 높이로 잘라내면 표 아래쪽이 조용히 사라지기 때문에 auto 로 둔다. */
   .frame{position:relative;overflow:hidden;border:.5pt solid #A8B2BA;border-radius:1mm;
-         margin:0 0 2mm;background:#141C28}
-  .frame > .g{width:940px;transform:scale(.7395);transform-origin:top left}
-  .frame.h340{height:252px}.frame.h400{height:296px}
-  .frame.h420{height:311px}.frame.h432{height:320px}.frame.h452{height:335px}
+         margin:0 0 2mm;background:#141C28;page-break-inside:avoid}
+  .frame > .g{width:940px;zoom:.7395}
   .shotnote{font-size:7.8pt;color:var(--mut);margin:0 0 4mm;line-height:1.5}
 
   /* 색 스와치 */
@@ -92,8 +92,11 @@
      background:var(--bg2);color:var(--tx);display:grid;grid-template-rows:auto 1fr auto;
      overflow:hidden;font-size:11.5px;font-family:var(--sans);line-height:1.5}
   .g.free{grid-template-rows:1fr}
-  .g.h340{height:340px}.g.h400{height:400px}.g.h420{height:420px}
-  .g.h432{height:432px}.g.h452{height:452px}
+  .g.h340{min-height:340px}.g.h400{min-height:400px}.g.h420{min-height:420px}
+  .g.h432{min-height:432px}.g.h452{min-height:452px}
+  /* 행 높이 15~20px 규약(05-ui.md)에 맞춘 조밀 표. 30명이 스크롤 없이 들어가는 것을 보이는 용도 */
+  table.t.dn td{padding:1px 8px;font-size:10.5px;line-height:1.45}
+  table.t.dn th{padding:2px 8px}
   .ttl{background:var(--ch);border-bottom:1px solid var(--bd);display:flex;align-items:center;
        height:26px;padding:0 9px;gap:9px;flex:none}
   .ttl .nv u{text-decoration:none;color:var(--tx3);background:var(--pn);border:1px solid var(--bd);
@@ -149,7 +152,7 @@
   .dw .ch{background:var(--pn);border:1px solid var(--bd);padding:2px 9px;font-size:11px;
           margin:0 5px 0 0;display:inline-block;border-radius:2px;color:var(--tx2)}
   .dw .ch.on{background:var(--sel);color:var(--selT);border-color:var(--sel)}
-  .pit{position:relative;overflow:hidden;
+  .pit{position:relative;overflow:hidden;min-height:340px;
        background:repeating-linear-gradient(90deg,var(--g1) 0 var(--st,26px),var(--g2) var(--st,26px) calc(var(--st,26px)*2))}
   .pit .mm{position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--gl)}
   .pit .cc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:2px solid var(--gl);border-radius:50%}
@@ -167,13 +170,13 @@
   .dk.wn_ .c{box-shadow:0 0 0 2px #DCAE5E,0 1px 2px rgba(0,0,0,.5)}
   .dk.bad_ .c{box-shadow:0 0 0 2px #D46B58,0 1px 2px rgba(0,0,0,.5)}
   .fm{position:relative;background:repeating-linear-gradient(90deg,#2E5238 0 32px,#294C33 32px 64px);
-      margin:10px;border:2px solid rgba(232,242,230,.3)}
+      margin:10px;border:2px solid rgba(232,242,230,.3);min-height:300px}
   .fm::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(232,242,230,.3)}
   .fp{position:absolute;transform:translate(-50%,-50%);text-align:center}
   .fp i{display:block;width:22px;height:22px;border-radius:50%;background:#4A7FC4;color:#fff;
         font-style:normal;font-weight:700;font-size:10px;line-height:22px;margin:0 auto 2px;
         font-family:var(--mono);box-shadow:0 1px 2px rgba(0,0,0,.5)}
-  .fp span{font-size:9px;text-shadow:0 1px 2px rgba(0,0,0,.9)}
+  .fp span{font-size:10.5px;color:#EFF4EC;text-shadow:0 1px 3px rgba(0,0,0,.95)}
   .fp.gk i{background:#E0C246;color:#2A2410}
   .fp.mt i{background:#3A4C60;color:#7C8CA0;border:1px dashed #64748C}
   .wk{display:grid;grid-template-columns:44px repeat(7,1fr);gap:2px;padding:9px 11px}
@@ -211,6 +214,33 @@
   .mp i{position:absolute;width:6px;height:6px;border-radius:50%;background:#4A7FC4;
         transform:translate(-50%,-50%);box-shadow:0 1px 1px rgba(0,0,0,.5)}
   .mp i.g{background:#E0C246}.mp i.f{background:#7FB8D6}
+  /* 만족도 얼굴 5종 */
+  .fc{display:inline-grid;place-items:center;position:relative;width:13px;height:13px;
+      border-radius:50%;flex:none;vertical-align:-2px}
+  .fc i{position:absolute;background:currentColor;display:block}
+  .fc .eL{left:22%;width:13%;height:13%;border-radius:50%}
+  .fc .eR{right:22%;width:13%;height:13%;border-radius:50%}
+  .fc .m{left:28%;right:28%}
+  .f1{color:#79B87E;border:1.4px solid currentColor}
+  .f1 .eL,.f1 .eR{top:30%;height:9%;width:16%;border-radius:0}
+  .f1 .m{bottom:20%;height:26%;border-radius:0 0 60% 60%;background:none;
+         border-bottom:1.4px solid currentColor;border-left:1.4px solid currentColor;border-right:1.4px solid currentColor}
+  .f2{color:#79B87E;border:1.4px solid currentColor}
+  .f2 .eL,.f2 .eR{top:32%}
+  .f2 .m{bottom:24%;height:18%;border-radius:0 0 60% 60%;background:none;
+         border-bottom:1.4px solid currentColor;border-left:1.4px solid currentColor;border-right:1.4px solid currentColor}
+  .f3{color:#9AA8BC;border:1.4px solid currentColor}
+  .f3 .eL,.f3 .eR{top:34%}
+  .f3 .m{bottom:30%;height:1.4px;background:currentColor}
+  .f4{color:#DCAE5E;border:1.4px solid currentColor}
+  .f4 .eL,.f4 .eR{top:34%}
+  .f4 .m{bottom:20%;height:18%;border-radius:60% 60% 0 0;background:none;
+         border-top:1.4px solid currentColor;border-left:1.4px solid currentColor;border-right:1.4px solid currentColor}
+  .f5{color:#D46B58;border:1.4px solid currentColor}
+  .f5 .eL,.f5 .eR{top:36%;height:9%;width:16%;border-radius:0}
+  .f5 .m{bottom:16%;height:24%;border-radius:60% 60% 0 0;background:none;
+         border-top:1.4px solid currentColor;border-left:1.4px solid currentColor;border-right:1.4px solid currentColor}
+
   .who2{display:flex;gap:5px;align-items:center;font-size:10.5px;padding:1.5px 0}
   .who2 .dot{width:6px;height:6px;border-radius:50%;flex:none}
   .accbar{height:5px;background:#0F1620;border:1px solid var(--bd);width:70px;display:inline-block;
@@ -229,14 +259,14 @@
       <b>확정 사항</b><br>
       UI 골격 <b>데이터 밀집형(FM 계열)</b> · 스킨 <b>C 새벽</b> 기본, A·B·D 설정 지원<br>
       경기 뷰 <b>바둑알 + 체력 링</b> — 아트 0장. 도트 스프라이트는 선택 항목<br>
-      전술 <b>지시 5종 × 3단 + 포메이션 8종</b>, 축은 깊이가 아니라 <b>수용률</b><br>
+      전술 <b>지시 4종 × 3단 + 포메이션 8종</b>, 축은 깊이가 아니라 <b>수용률</b><br>
       인원 미달 시 <b>경기 취소</b> — 미달 진형은 만들지 않는다
     </div>
   </div>
   <dl class="meta">
     <dt>문서</dt><dd>05-ui.md 를 화면 단위로 펼친 것</dd>
     <dt>기준 해상도</dt><dd>1920 × 1080 (최소 1280 × 720)</dd>
-    <dt>구현 단위</dt><dd>화면 24개 · 탭 포함 57개</dd>
+    <dt>구현 단위</dt><dd>화면 24개 <span style="color:var(--mut)">(+설정 25)</span> · 탭 포함 <b>41개</b></dd>
     <dt>근거 문서</dt><dd>01-gdd.md · 05-ui.md · 04-elements.md (E57 · E80 · E82)</dd>
     <dt>표기</dt><dd>화면 <code>S-nn</code> · 경기 <code>S-Mn</code> · 오버레이 <code>O-n</code></dd>
   </dl>
@@ -311,7 +341,7 @@
 <pre>┌─────────────────────────────────────────────────────────────────┐
 │ <b>타이틀 바</b>  h28   ◀ ▶  대신동FC › 회원 명단 › <b>이규민</b>      2029.03 2주차 │
 ├───────────────┬─────────────────────────────────────────────────┤
-│               │ <b>탭 바</b>     h26   개요 │ 능력 │ 출전 이력 │ 관계      │
+│               │ <b>탭 바</b>     h26   개요 │ 이력 │ 관계               │
 │  <b>트리</b>          ├─────────────────────────────────────────────────┤
 │  w150~180     │ <b>요약 스트립</b>  h40   다음 경기 · 참석 · 잔액  (선택)  │
 │  13항목       ├─────────────────────────────────────────────────┤
@@ -320,7 +350,7 @@
 │  클럽 4       │                                                 │
 │  기록 4       │                                                 │
 ├───────────────┴─────────────────────────────────────────────────┤
-│ <b>상태 바</b>  h28   회원 12명 · 남은 행동 3 · <b>인원 2 부족</b>   [ 주 진행 ▶ ] │
+│ <b>상태 바</b>  h28   회원 12명 · 빈 칸 9 · <b>인원 2 부족</b>     [ 주 진행 ▶ ] │
 └─────────────────────────────────────────────────────────────────┘</pre>
 
   <table>
@@ -386,7 +416,7 @@
 <section class="page">
   <h2><span class="id">2</span>컴포넌트와 스킨<span class="rt">05-ui.md 4~7</span></h2>
   <p class="lead">
-    <b>12개로 전 화면을 만든다.</b> 새 화면을 추가할 때 새 컴포넌트를 만들지 않는 것이 원칙이다.
+    <b>13개로 전 화면을 만든다.</b> 새 화면을 추가할 때 새 컴포넌트를 만들지 않는 것이 원칙이다.
   </p>
   <table>
     <thead><tr><th style="width:32mm">컴포넌트</th><th style="width:30mm">쓰이는 곳</th><th>규칙</th></tr></thead>
@@ -407,7 +437,9 @@
       <tr><th>트리 뱃지</th><td>트리</td><td>숫자 또는 <code>!</code>. 0이면 표시하지 않음</td></tr>
       <tr><th>버튼</th><td>전 화면</td><td>주요 1개(선택색) · 보조 다수 · 위험(빨강)은 확인 오버레이 동반</td></tr>
       <tr><th>3단 세그먼트</th><td>S-04 전술</td><td>지시 선택. <b>3단 고정</b> — 0~20 스케일을 쓰지 않는다</td></tr>
-      <tr><th>이벤트 드로어</th><td>전 화면</td><td>상태 바 위로 열린다. <b>O-6 면접도 이걸 쓴다</b></td></tr>
+      <tr><th>이벤트 드로어</th><td>전 화면</td>
+        <td>상태 바 위로 열린다. <b>O-6 면접과 S-M2 교체 거부도 이걸 쓴다</b> —
+          S-M2는 상태 바가 없어 하단 컨트롤 바 위로 열린다</td></tr>
       <tr><th>바둑알 + 체력 링</th><td>S-M2</td><td>원 + 등번호 + 둘레 게이지. 전부 <code>_draw()</code></td></tr>
     </tbody>
   </table>

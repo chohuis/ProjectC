@@ -1,475 +1,674 @@
-<!-- ═══════════ S-07 ═══════════ -->
+﻿<!-- ═══════════ S-07 ═══════════ -->
 <section class="page">
-  <h2><span class="id">S-07</span>재정<span class="rt">클럽 · 탭 6</span></h2>
+  <h2><span class="id">S-07</span>재정<span class="rt">클럽 · 4탭</span></h2>
   <p class="lead">
-    회비가 들어오고 대관료가 나간다. <b>장비를 여기 탭으로 접었다</b> —
-    소모품과 유니폼 적립은 결국 돈 이야기라 독립 화면일 이유가 없었다.
+    통장 잔액이 이 팀의 체온이다. <b>회비를 올리면 재정이 풀리고 사람이 나간다</b> —
+    이 화면에 있는 유일한 진짜 결정.
   </p>
 
-  <p class="cap">SCREENSHOT · 거래 내역 탭</p>
+  <p class="cap">SCREENSHOT · 거래 내역 + 우측 요약</p>
   <div class="frame h400"><div class="g h400">
     <div class="ttl"><span class="nv"><u>◀</u><u>▶</u></span><span class="cb">대신동FC › <i>재정</i></span>
-      <span class="rt">2029년 3월 2주차</span></div>
+      <span class="rt">2029년 3월 · 회계 최승철</span></div>
     <div class="mid">
       <div class="tr">
         <div class="cl"><b>대신동FC</b><i>창단 12년차 · 4승 2무 5패</i></div>
         <p>운영</p><a href="#">이번 주</a><a href="#">회원 명단 <em>2</em></a><a href="#">라인업</a>
-        <a href="#">일정</a><a href="#">단톡방 <em>7</em></a>
+        <a href="#">일정</a><a href="#">단톡방 <em>2</em></a>
         <p>클럽</p><a href="#" class="on">재정 <em>!</em></a><a href="#">영입 <em>3</em></a><a href="#">구장</a><a href="#">규칙</a>
         <p>기록</p><a href="#">경기 기록</a><a href="#">상대팀</a><a href="#">연대기</a><a href="#">내 정보</a>
       </div>
       <div class="mn">
-        <div class="tb"><span class="on">거래 내역</span><span>회비</span><span>월별</span><span>적립</span><span>스폰서</span><span>장비</span></div>
+        <div class="tb"><span class="on">거래 내역</span><span>회비</span><span>장비 · 적립</span><span>스폰서</span></div>
+        <div class="sp" style="padding:0">
+          <div style="padding:5px 11px;display:flex;gap:6px;align-items:center">
+            <span class="chip" style="background:var(--pn);border:1px solid var(--bd);color:var(--tx3)">□ 월별 묶기</span>
+            <span style="font-size:10px;color:var(--tx3)">— 켜면 월 합계 · 항목별 비중 · 12개월 추이</span></div>
+        </div>
         <div class="bdy" style="display:grid;grid-template-columns:1fr 216px">
           <div style="overflow:hidden">
-            <table class="t"><thead><tr><th style="width:52px">날짜</th><th style="width:46px">구분</th><th>항목</th>
-              <th class="nn" style="width:66px">수입</th><th class="nn" style="width:66px">지출</th>
-              <th class="nn" style="width:70px">잔액</th></tr></thead><tbody>
-              <tr><td>03-03</td><td>회비</td><td>3월 회비 11명 <span class="u-r">(1명 미납)</span></td><td class="nn u-g">330,000</td><td class="nn"></td><td class="nn">263,000</td></tr>
-              <tr><td>03-01</td><td>대관</td><td>상평체육공원 3/1</td><td class="nn"></td><td class="nn u-r">45,000</td><td class="nn">-67,000</td></tr>
-              <tr><td>02-28</td><td>소모품</td><td>공 2개 · 조끼 세탁</td><td class="nn"></td><td class="nn u-r">32,000</td><td class="nn">-22,000</td></tr>
-              <tr><td>02-25</td><td>회식</td><td>2월 정기 회식 (9명 참석)</td><td class="nn"></td><td class="nn u-r">183,000</td><td class="nn">10,000</td></tr>
-              <tr><td>02-23</td><td>대관</td><td>상평체육공원 2/22</td><td class="nn"></td><td class="nn u-r">45,000</td><td class="nn">193,000</td></tr>
-              <tr><td>02-16</td><td>대관</td><td>대신초등학교 2/15</td><td class="nn"></td><td class="nn u-r">30,000</td><td class="nn">238,000</td></tr>
-              <tr><td>02-14</td><td>벌금</td><td>박현범 · 무단 불참</td><td class="nn u-g">10,000</td><td class="nn"></td><td class="nn">268,000</td></tr>
-              <tr><td>02-09</td><td>대관</td><td>상평체육공원 2/8</td><td class="nn"></td><td class="nn u-r">45,000</td><td class="nn">258,000</td></tr>
-              <tr><td>02-03</td><td>회비</td><td>2월 회비 12명</td><td class="nn u-g">360,000</td><td class="nn"></td><td class="nn">303,000</td></tr>
-              <tr><td>01-30</td><td>장비</td><td>유니폼 적립 이체</td><td class="nn"></td><td class="nn u-r">60,000</td><td class="nn">-57,000</td></tr>
-              <tr><td>01-26</td><td>대관</td><td>상평체육공원 1/25</td><td class="nn"></td><td class="nn u-r">45,000</td><td class="nn">3,000</td></tr>
+            <table class="t"><thead><tr><th style="width:52px">날짜</th><th style="width:80px">구분</th>
+              <th>항목</th><th class="nn" style="width:62px">수입</th><th class="nn" style="width:62px">지출</th>
+              <th class="nn" style="width:66px">잔액</th></tr></thead><tbody>
+              <tr><td>03-01</td><td class="u-g">회비</td><td>3월 회비 · 9명</td><td class="nn u-g">270,000</td><td class="nn"></td><td class="nn">312,000</td></tr>
+              <tr><td>03-01</td><td>대관</td><td>상평체육공원 · 3/1</td><td class="nn"></td><td class="nn">60,000</td><td class="nn">252,000</td></tr>
+              <tr><td>03-01</td><td class="u-g">용병 참가비</td><td>정민호 · 1명</td><td class="nn u-g">10,000</td><td class="nn"></td><td class="nn">262,000</td></tr>
+              <tr><td>03-01</td><td class="u-g">벌금</td><td>무단 불참 · 고태현</td><td class="nn u-g">10,000</td><td class="nn"></td><td class="nn">272,000</td></tr>
+              <tr><td>02-26</td><td>소모품</td><td>공 2개 · 자동 구매</td><td class="nn"></td><td class="nn">44,000</td><td class="nn">228,000</td></tr>
+              <tr><td>02-24</td><td>회식</td><td>2월 정기 회식 · 11명</td><td class="nn"></td><td class="nn">176,000</td><td class="nn">52,000</td></tr>
+              <tr><td>02-22</td><td class="u-g">스폰서</td><td>대신정형외과 · 2월분</td><td class="nn u-g">150,000</td><td class="nn"></td><td class="nn">228,000</td></tr>
+              <tr><td>02-22</td><td>대관</td><td>구민운동장 · 2/22</td><td class="nn"></td><td class="nn">45,000</td><td class="nn">78,000</td></tr>
+              <tr><td>02-15</td><td>장비</td><td>유니폼 적립 이체</td><td class="nn"></td><td class="nn">50,000</td><td class="nn">123,000</td></tr>
+              <tr><td>02-15</td><td>대관</td><td>상평체육공원 · 2/15</td><td class="nn"></td><td class="nn">60,000</td><td class="nn">173,000</td></tr>
+              <tr><td>02-08</td><td class="u-g">용병 참가비</td><td>용병 2명</td><td class="nn u-g">20,000</td><td class="nn"></td><td class="nn">233,000</td></tr>
+              <tr><td>02-01</td><td class="u-g">회비</td><td>2월 회비 · <span class="u-y">8명</span></td><td class="nn u-g">240,000</td><td class="nn"></td><td class="nn">213,000</td></tr>
             </tbody></table>
           </div>
           <div class="pan">
             <p class="k">현재 잔액</p>
-            <div style="font-size:25px;color:var(--tx);font-weight:600">218,000</div>
-            <div style="font-size:10.5px;color:var(--tx2);margin-bottom:10px">지난달 대비 <span class="u-g">＋95,000</span></div>
-            <p class="k">3월 예상</p>
-            <div style="font-size:10.5px;color:var(--tx2);line-height:1.85">
-              <div style="display:flex;justify-content:space-between"><span>회비 수입</span><span class="u-g">+330,000</span></div>
-              <div style="display:flex;justify-content:space-between"><span>대관 4회</span><span class="u-r">-180,000</span></div>
-              <div style="display:flex;justify-content:space-between"><span>소모품</span><span class="u-r">-30,000</span></div>
-              <div style="display:flex;justify-content:space-between;border-top:1px solid var(--bd);margin-top:3px;padding-top:3px">
-                <span style="color:var(--tx)">월말 예상</span><span style="color:var(--tx)">338,000</span></div></div>
-            <p class="k" style="margin-top:10px">유니폼 적립</p>
-            <div style="height:7px;background:#0F1620;border:1px solid var(--bd);margin-bottom:3px">
-              <i style="display:block;height:100%;width:53%;background:#5E9ED6"></i></div>
-            <div style="font-size:10.5px;color:var(--tx2)">128,000 / 240,000 · 12명분</div>
-            <p class="k" style="margin-top:10px">미납</p>
-            <div class="warnbox" style="border-color:var(--wn);background:rgba(220,174,94,.1);color:#EFD09A">
-              <b style="color:#F5E0B4">이규민 · 2개월</b>60,000원 · 만족도 18</div>
+            <div style="font-size:21px;color:var(--tx);font-family:var(--mono);line-height:1.15">218,000</div>
+            <div style="font-size:10px;color:#D46B58;margin-bottom:8px">지난달 대비 −34,000</div>
+            <p class="k">이번 달 예상</p>
+            <div style="font-size:10.5px;line-height:1.7;color:var(--tx2)">
+              <div style="display:flex"><span style="flex:1">회비 수입</span><b class="mn_ u-g">+270,000</b></div>
+              <div style="display:flex"><span style="flex:1">용병 참가비</span><b class="mn_ u-g">+30,000</b></div>
+              <div style="display:flex"><span style="flex:1">스폰서</span><b class="mn_ u-g">+150,000</b></div>
+              <div style="display:flex"><span style="flex:1">대관 4회</span><b class="mn_">−240,000</b></div>
+              <div style="display:flex"><span style="flex:1">소모품</span><b class="mn_">−40,000</b></div>
+              <div style="display:flex"><span style="flex:1">적립 이체</span><b class="mn_">−50,000</b></div>
+              <div style="display:flex;border-top:1px solid var(--bd);margin-top:3px;padding-top:3px">
+                <span style="flex:1;color:var(--tx)">월말 예상</span><b class="mn_ u-y">338,000</b></div>
+            </div>
+            <p class="k" style="margin-top:9px">유니폼 적립</p>
+            <div class="bar" style="height:7px"><i style="width:38%;background:var(--sel)"></i></div>
+            <div style="font-size:10px;color:var(--tx2);margin-top:3px">380,000 / 1,000,000 · 30명분</div>
+            <p class="k" style="margin-top:9px">미납</p>
+            <div style="font-size:10.5px;line-height:1.75">
+              <div style="display:flex;align-items:center;gap:5px">
+                <span class="fc f5" style="color:#F5C8BC"><i class="eL"></i><i class="eR"></i><i class="m"></i></span>
+                <span style="flex:1">이규민 2개월</span><b class="u-r mn_">60,000</b></div>
+              <div style="display:flex;align-items:center;gap:5px">
+                <span class="fc f3"><i class="eL"></i><i class="eR"></i><i class="m"></i></span>
+                <span style="flex:1">권오섭 1개월</span><b class="u-y mn_">30,000</b></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="br"><span>회비 <b>30,000</b>/월</span><span class="u-y">미납 1명</span>
-      <span class="go">주 진행 ▶</span></div>
+    <div class="br"><span>회원 <b>12</b>명</span><span>빈 칸 <b>9</b></span>
+      <span class="u-y">미납 2명</span><span class="go">주 진행 ▶</span></div>
   </div></div>
+  <p class="shotnote">
+    <b>미납 옆에 얼굴이 붙어 있다.</b> 이규민은 돈이 없는 게 아니라 마음이 떠난 것이고,
+    독촉하면 그 즉시 나간다. 같은 "미납 2명"이라도 <b>대응이 완전히 달라진다.</b>
+  </p>
 
-  <h4>목적</h4>
-  <p>돈이 <b>어디로 나가는지</b>를 보여준다. 회원이 늘면 유니폼·회식·소모품이 비례해서 늘고,
-    그 압박이 "규모를 키울 것인가"라는 질문으로 돌아온다.</p>
-
-  <h4>탭</h4>
-  <table>
-    <thead><tr><th style="width:20mm">탭</th><th style="width:50mm">보이는 것</th><th style="width:46mm">여기서 하는 결정</th><th>근거</th></tr></thead>
+  <h4>탭 6 → 4</h4>
+  <table class="tight">
+    <thead><tr><th style="width:26mm">탭</th><th>판정</th></tr></thead>
     <tbody>
-      <tr><th>거래 내역</th><td>날짜순 입출금 + 우측 요약</td><td>— (열람)</td><td>9장</td></tr>
-      <tr><th>회비</th><td>회원별 납부 현황 · 미납 개월 수 · 누적</td>
-        <td><b>독촉 · 유예 · 면제.</b> 셋 다 만족도에 영향</td><td>9.2</td></tr>
-      <tr><th>월별</th><td>월 단위 수입/지출 추이. 항목별 비중</td><td>회비 금액을 바꿀지</td><td>9장</td></tr>
-      <tr><th>적립</th><td>목적별 적립 — 유니폼 · 대회 참가비 · 예비비</td><td>목표 금액과 이체 비율</td><td>9.3</td></tr>
-      <tr><th>스폰서</th><td>후보 목록 · 조건 · 요구사항</td>
-        <td><b>받을지 말지.</b> 유니폼에 이름이 박히고 회원 반응이 갈린다</td><td>9.1</td></tr>
-      <tr><th>장비</th><td>소모품 재고(공 · 조끼 · 구급) · 유니폼 보유 상태</td>
-        <td>구매 시점. 재고가 떨어지면 경기 진행에 지장</td><td>9.3</td></tr>
+      <tr><th>거래 내역</th><td>표 6열. <b>월별은 탭이 아니라 토글</b>로 내렸다</td></tr>
+      <tr><th>회비</th><td>납부 격자 + 처리 3종 + <b>회비 설정</b>(신규)</td></tr>
+      <tr><th>장비 · 적립</th><td><b>둘을 합쳤다.</b> 적립의 주 목적이 유니폼이라 원래 한 이야기였다</td></tr>
+      <tr><th>스폰서</th><td>🔶 자주 여는 화면은 아니지만 후보 비교에 표가 필요하다</td></tr>
+      <tr><td class="bad">월별</td><td>같은 데이터의 집계 뷰. <b>12개월 추이만 토글로 살렸다</b> —
+        "회비를 올려야 하나"의 유일한 근거라서</td></tr>
+      <tr><td class="bad">소모품</td><td><b>자동 구매로 내림</b> — 아래</td></tr>
     </tbody>
   </table>
 
-  <h4>설계 노트</h4>
-  <ul>
-    <li><b>회식 183,000원이 이 표에서 가장 큰 단일 지출이다.</b> 9명이 참석했고
-      잔액이 한때 만 원까지 내려갔다 — 화목한 팀의 비용이 숫자로 남는다</li>
-    <li>미납은 <b>사람 이름과 함께</b> 표시된다. "미납 1명"이 아니라 "이규민 · 2개월 · 만족도 18".
-      독촉하면 만족도가 더 떨어진다는 것도 같이 보인다</li>
-    <li>벌금 수입(박현범 · 무단 불참 10,000)이 <b>규칙 시스템과 재정을 잇는 유일한 줄</b>이다</li>
-    <li>우측 "3월 예상"은 <b>확정이 아니라 추정</b>이다. 용병을 몇 번 부르느냐로 달라진다</li>
-  </ul>
+  <h4>용병 참가비는 수입이다</h4>
+  <div class="flag">
+    GDD 6장 — <b>"용병에게 사례비를 주는 일은 없다. 그냥 축구하고 싶어서 오는 사람들이고,
+    그날 뛰는 값으로 참가비를 낸다."</b> 구장비 갹출 성격이다.
+    다섯 화면(S-04 · S-07 · S-08 · S-M1 · S-M3)에서 방향이 반대로 적혀 있었다 —
+    <b>용병은 인원도 채우고 구장비도 회수한다.</b>
+  </div>
+  <table class="tight">
+    <thead><tr><th style="width:58mm">구분 8종</th><th>방향</th></tr></thead>
+    <tbody>
+      <tr><td>회비 · 벌금 · 스폰서 · <b>용병 참가비</b></td><td class="ok">수입</td></tr>
+      <tr><td>대관 · 소모품 · 회식 · 장비</td><td>지출</td></tr>
+    </tbody>
+  </table>
+
+  <h4>회비 설정이 빠져 있었다</h4>
+  <p>
+    GDD 10장 주간 행동에 <b>"회비 금액 · 방식 조정"</b>이 있고 결정 로그에도
+    "회비 방식도 플레이어가 정한다"고 적혀 있는데, 화면에는 <b>납부 현황만 있고 설정하는 곳이 없었다.</b>
+  </p>
+  <table class="tight">
+    <thead><tr><th style="width:22mm">설정</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><th>금액</th><td>월 정액. 변경 시 <b>전원 만족도에 영향</b></td></tr>
+      <tr><th>징수 방식</th><td>월 정액 / 경기당 갹출 / 혼합 — <b>방식마다 반발하는 사람이 다르다</b></td></tr>
+      <tr><th>납부일</th><td>월 n일</td></tr>
+    </tbody>
+  </table>
+  <p>변경은 <b>O-7에서 한다.</b> 되돌릴 수 없고 전원에게 영향이 가므로 규칙 개정과 같은 화면·같은 반발 예상을 쓴다.</p>
+
+  <h4>소모품은 자동 구매로 내린다</h4>
+  <p>
+    공 · 조끼 · 구급 · 마커에는 <b>결정이 없다.</b> 떨어지면 사는 것이고,
+    안 사면 경기에 지장인데 <b>일부러 그럴 이유가 없다.</b>
+    지출만 거래 내역에 찍는다. <b>유니폼은 다르다</b> — 적립 목표가 있고 만족도에 영향이 있고 스폰서 로고가 박힌다.
+  </p>
 </section>
 
 <!-- ═══════════ S-08 ═══════════ -->
 <section class="page">
-  <h2><span class="id">S-08</span>영입<span class="rt">클럽 · 탭 5</span></h2>
+  <h2><span class="id">S-08</span>영입<span class="rt">클럽 · 4탭</span></h2>
   <p class="lead">
-    사람을 들이는 세 채널과 용병을 한 화면에 모았다.
-    <b>면접 탭은 없앴다</b> — 면접은 표가 아니라 대화라서 오버레이(O-6)로 뺐다.
+    <b>문구를 고르는 게 아니라 조건을 건다.</b>
+    조건을 좁히면 안 오고, 안 걸면 아무나 온다 — 몇 달 뒤에 문제가 된다.
   </p>
 
-  <p class="cap">SCREENSHOT · 지원자 탭</p>
-  <div class="frame h400"><div class="g h400">
-    <div class="ttl"><span class="nv"><u>◀</u><u>▶</u></span><span class="cb">대신동FC › 영입 › <i>지원자</i></span>
-      <span class="rt">신규 지원 3명</span></div>
+  <p class="cap">SCREENSHOT · 모집 공고 · 조건 5축</p>
+  <div class="frame h420"><div class="g h420">
+    <div class="ttl"><span class="nv"><u>◀</u><u>▶</u></span><span class="cb">대신동FC › <i>영입</i></span>
+      <span class="rt">공고 게시 중 · 3주차</span></div>
     <div class="mid">
       <div class="tr">
         <div class="cl"><b>대신동FC</b><i>창단 12년차 · 4승 2무 5패</i></div>
         <p>운영</p><a href="#">이번 주</a><a href="#">회원 명단 <em>2</em></a><a href="#">라인업</a>
-        <a href="#">일정</a><a href="#">단톡방 <em>7</em></a>
+        <a href="#">일정</a><a href="#">단톡방 <em>2</em></a>
         <p>클럽</p><a href="#">재정 <em>!</em></a><a href="#" class="on">영입 <em>3</em></a><a href="#">구장</a><a href="#">규칙</a>
         <p>기록</p><a href="#">경기 기록</a><a href="#">상대팀</a><a href="#">연대기</a><a href="#">내 정보</a>
       </div>
       <div class="mn">
-        <div class="tb"><span>모집 공고</span><span class="on">지원자 <b style="color:var(--dn)">3</b></span>
-          <span>지인 소개</span><span>영입 권유</span><span>용병</span></div>
+        <div class="tb"><span class="on">모집 공고</span><span>지원자 <b style="color:var(--dn)">3</b></span><span>영입 권유</span><span>용병</span></div>
         <div class="sp">
-          <div><i>공고 상태</i><b class="u-g">게시 중 · 4주차</b></div><div><i>누적 지원</i><b>11명</b></div>
-          <div><i>수락</i><b>2</b></div><div><i>현재 인원</i><b>12 / 30</b></div>
+          <div><i>공고 상태</i><b class="u-g">게시 중 · 3주차</b></div>
+          <div><i>누적 지원</i><b>7명</b></div>
+          <div><i>수락</i><b>2명</b></div>
+          <div><i>현재 인원</i><b>12명</b></div>
         </div>
-        <div class="bdy" style="display:grid;grid-template-columns:1fr 230px">
-          <table class="t"><thead><tr><th style="width:52px">이름</th><th style="width:30px">나이</th><th style="width:44px">POS</th>
-            <th style="width:56px">직업</th><th style="width:52px">거주</th><th class="nn" style="width:36px">이동</th>
-            <th style="width:56px">경력</th><th style="width:60px">지원일</th><th>지원 사유</th></tr></thead><tbody>
-            <tr class="sel"><td>임수혁</td><td>33</td><td>MF / FW</td><td>사무직</td><td>관악구</td><td class="nn">14분</td><td>10년</td><td>03-04</td><td>이사 와서 팀을 찾는 중</td></tr>
-            <tr><td>조현우</td><td>26</td><td>DF</td><td>학생</td><td>동작구</td><td class="nn">31분</td><td>2년</td><td>03-02</td><td>운동 삼아 시작해보려고</td></tr>
-            <tr><td>박정민</td><td>45</td><td>DF</td><td>자영업</td><td>관악구</td><td class="nn">9분</td><td>20년</td><td>03-01</td><td>전 팀이 해체됨</td></tr>
-          </tbody></table>
+        <div class="bdy" style="display:grid;grid-template-columns:1fr 232px">
+          <div style="overflow:hidden">
+            <div class="ord"><div class="lb"><b>포지션</b><span>DF</span></div>
+              <div class="seg"><span>무관</span><span>GK</span><span class="on">DF</span><span>MF</span><span>FW</span></div>
+              <div class="hint">좁히면 지원 수 ↓ · 해당 POS 비율 ↑ — <b style="color:#EFD09A">S-01의 `DF 1 부족`과 직접 이어진다</b></div></div>
+            <div class="ord"><div class="lb"><b>연령대</b><span>30~40대</span></div>
+              <div class="seg"><span>무관</span><span>20~30대</span><span class="on">30~40대</span><span>40대+</span></div>
+              <div class="hint">나이 곡선(2.2)상 능력 분포가 갈린다</div></div>
+            <div class="ord"><div class="lb"><b>경력</b><span>초보 환영</span></div>
+              <div class="seg"><span>무관</span><span class="on">초보 환영</span><span>경력자</span></div>
+              <div class="hint">초보는 능력이 낮되 <b style="color:var(--tx2)">성실함 · 친화력 경향</b></div></div>
+            <div class="ord"><div class="lb"><b>성향</b><span>친목 위주</span></div>
+              <div class="seg"><span>무관</span><span class="on">친목 위주</span><span>진지하게</span></div>
+              <div class="hint">승부욕 · 자존심 분포가 바뀐다</div></div>
+            <div class="ord" style="border-bottom:none"><div class="lb"><b>회비 명시</b><span>함</span></div>
+              <div class="seg"><span class="on">함</span><span>안 함</span></div>
+              <div class="hint">명시하면 지원 ↓ · <b style="color:#A8D6AC">미납 위험 ↓</b></div></div>
+          </div>
           <div class="pan">
-            <p class="k">임수혁 · 33세</p>
-            <div style="font-size:10.5px;color:var(--tx2);line-height:1.75;margin-bottom:8px">
-              사무직 · 평일 주간 근무<br>관악구 거주 · 구장까지 14분<br>기혼 · 자녀 1</div>
-            <p class="k">면접 전에 아는 것</p>
-            <div class="rw"><span style="width:44px;color:var(--tx2)">경력</span><span class="bar"><i style="width:70%;background:#5E9ED6"></i></span><span style="font-size:10px;width:34px;text-align:right">10년</span></div>
-            <div class="rw"><span style="width:44px;color:var(--tx2)">접근성</span><span class="bar"><i style="width:86%;background:#5E9ED6"></i></span><span style="font-size:10px;width:34px;text-align:right">좋음</span></div>
-            <div class="rw"><span style="width:44px;color:var(--tx2)">여유</span><span class="bar"><i style="width:64%;background:#5E9ED6"></i></span><span style="font-size:10px;width:34px;text-align:right">보통</span></div>
-            <div style="font-size:10px;color:var(--tx3);line-height:1.7;margin-top:5px">
-              <b style="color:var(--tx2)">능력과 기질은 안 보인다.</b> 면접을 하거나, 몇 주 같이 뛰어봐야 드러난다</div>
-            <p class="k" style="margin-top:10px">할 수 있는 것</p>
-            <div style="font-size:10.5px;color:var(--tx2);line-height:1.9">
-              · <b style="color:var(--sel)">면접 보기</b> <span style="color:var(--tx3)">(행동 1)</span><br>
-              · 바로 수락 <span style="color:var(--wn)">(모르는 채로)</span><br>· 거절 · 보류</div>
-            <div class="warnbox" style="margin-top:8px;border-color:var(--wn);background:rgba(220,174,94,.1);color:#EFD09A">
-              <b style="color:#F5E0B4">회원이 늘면 비용도 는다</b>유니폼·회식·소모품이 인원 비례</div>
+            <p class="k">예상 지원 수</p>
+            <div style="font-size:12.5px;color:var(--tx)">주당 <b>1~2명</b></div>
+            <div style="font-size:9.5px;color:var(--tx3);margin-bottom:8px">조건 없을 때 3~5명</div>
+            <p class="k">생성된 공고문</p>
+            <div style="background:var(--pn2);border:1px solid var(--bd);padding:7px 9px;
+                        font-size:10.5px;line-height:1.75;color:var(--tx2)">
+              관악구 대신동FC입니다.<br>
+              <b style="color:var(--tx)">수비수</b> 한 분 모십니다.
+              <b style="color:var(--tx)">30~40대</b> 환영, <b style="color:var(--tx)">초보</b>도 괜찮습니다.<br>
+              <b style="color:var(--tx)">즐겁게</b> 뛰실 분. 회비 <b style="color:var(--tx)">월 3만원</b>.<br>
+              일요일 오전 6시 상평체육공원.</div>
+            <div style="font-size:9.5px;color:var(--tx3);margin-top:4px;line-height:1.5">
+              조건 조각을 조합해 자동 생성된다.</div>
+            <p class="k" style="margin-top:9px">주간 지원 추이</p>
+            <div style="font-size:10.5px;color:var(--tx2);font-family:var(--mono)">1주 ▮▮▮ 3<br>2주 ▮▮ 2<br>3주 ▮▮ 2</div>
+            <div class="warnbox" style="margin-top:9px;border-color:var(--wn);
+                        background:rgba(220,174,94,.1);color:#EFD09A">
+              <b style="color:#F5E0B4">회원이 늘면 비용도 는다</b>유니폼 · 회식이 인원 비례</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="br"><span>회원 <b>12 / 30</b></span><span>남은 행동 <b>2</b></span>
-      <span class="go">주 진행 ▶</span></div>
+    <div class="br"><span>회원 <b>12</b>명</span><span>빈 칸 <b>9</b></span>
+      <span class="u-y">지원자 3명 대기</span><span class="go">주 진행 ▶</span></div>
   </div></div>
+  <p class="shotnote">
+    <b>공고문이 눈에 보이는 것이 이 화면의 핵심이다.</b>
+    조건 5개를 만지면 문장이 바뀐다 — 결과물이 즉시 보이니까 조건이 추상적인 슬라이더가 아니게 된다.
+    <b>문구 3~4종을 준비하는 것보다 콘텐츠 부담도 작다.</b>
+  </p>
 
-  <h4>탭</h4>
-  <table>
-    <thead><tr><th style="width:22mm">탭</th><th style="width:50mm">보이는 것</th><th style="width:44mm">여기서 하는 결정</th><th>근거</th></tr></thead>
+  <h4>조건이 만드는 갈등</h4>
+  <pre>인원이 급하다 → 조건 없이 올린다 → <b>아무나 온다</b> → 몇 달 뒤 문제가 된다
+조건을 건다   → <b>안 온다</b>     → 인원 미달   → 경기 취소 (11.7)</pre>
+
+  <h4>탭 5 → 4</h4>
+  <table class="tight">
+    <thead><tr><th style="width:26mm">탭</th><th>내용</th></tr></thead>
     <tbody>
-      <tr><th>모집 공고</th><td>공고 게시 여부 · 문구 · 경과 주차 · 누적 지원 수</td>
-        <td>공고를 낼지, 어떤 문구로 낼지. <b>문구가 지원자 성향을 바꾼다</b></td><td>6장</td></tr>
-      <tr><th>지원자</th><td>지원자 표 — 면접 전에 알 수 있는 것만</td>
-        <td>면접 · 즉시 수락 · 거절 · 보류</td><td>6장 · 2.8</td></tr>
-      <tr><th>지인 소개</th><td>회원이 데려온 사람. <b>소개자가 누구인지가 붙는다</b></td>
-        <td>거절하면 소개자의 만족도가 떨어진다</td><td>6장</td></tr>
-      <tr><th>영입 권유</th><td>다른 팀 회원 · 자주 오는 용병 목록</td>
-        <td>권유할지. <b>상대 팀과 사이가 나빠질 수 있다</b></td><td>6장 · 12장</td></tr>
-      <tr><th>용병</th><td>공고 게시 · 응답자 · 단가 · 과거 이력</td>
-        <td>부를지 말지. <b>인원 미달이면 이 탭이 경기 성립을 좌우한다</b></td><td>6장 · 11.7</td></tr>
+      <tr><th>모집 공고</th><td>조건 5축 · 예상 지원 수 · <b>생성된 공고문</b> · 게시 상태</td></tr>
+      <tr><th>지원자</th><td>표 9열. <b>경로 열</b>에 <code>공고</code> 또는 <code>김상수 소개</code></td></tr>
+      <tr><th>영입 권유</th><td>🔶 타 팀 회원 · 자주 오는 용병. <b>관계 위험</b> — 반복하면 기피 대상(S-12)</td></tr>
+      <tr><th>용병</th><td>1회성이고 <b>인원 미달 시 경기 성립을 좌우한다</b>(11.7)</td></tr>
+      <tr><td class="bad">지인 소개</td><td>지원자로 흡수. 둘 다 <b>"내 결정 대기"</b>라 같은 목록이다</td></tr>
     </tbody>
   </table>
+  <div class="note">
+    <b><code>12 / 30</code> 표기를 쓰지 않는다.</b> 결정 로그에서 "크게 제한을 둘 생각은 아직 없다"고 했는데
+    분수 표기는 <b>하드 상한으로 읽힌다.</b> 현재 인원만 쓰고, 인원이 늘 때의 부담은 우측 경고로 알린다.
+  </div>
+  <div class="flag">
+    <b>면접 전에는 능력·기질을 보여주지 않는다.</b> 정보 공개 범위(2.8)가 가장 강하게 작동하는 화면이다.
+    보이는 것은 <b>경력 · 접근성 · 여유</b> 3축뿐이고, 안내 문구가 붙는다 —
+    <i>"능력과 기질은 안 보인다. 면접을 하거나 몇 주 같이 뛰어봐야 드러난다."</i>
+  </div>
 
-  <h4>설계 노트</h4>
-  <ul>
-    <li><b>면접 전에는 능력과 기질이 안 보인다.</b> 보이는 것은 나이 · 직업 · 거주 · 경력 ·
-      지원 사유뿐이다. 정보 공개 범위(2.8)가 여기서 가장 강하게 작동한다</li>
-    <li>"바로 수락"이 <b>모르는 채로 들이는 선택</b>으로 명시된다. 행동을 아끼는 대신 위험을 산다</li>
-    <li>지원 사유가 <b>사람을 설명한다.</b> "전 팀이 해체됨"(45세, 경력 20년)과
-      "운동 삼아 시작해보려고"(26세, 경력 2년)는 완전히 다른 회원이 된다</li>
-    <li>우측 경고가 <b>영입의 대가</b>를 상기시킨다 — 회원이 늘면 회비 수입도 늘지만
-      유니폼·회식·소모품이 더 빨리 는다</li>
-  </ul>
+  <h4>용병 참가비가 취소 압박과 물린다</h4>
+  <table class="tight">
+    <thead><tr><th style="width:26mm"></th><th style="width:36mm">일찍 올림</th><th>늦게 올림</th></tr></thead>
+    <tbody>
+      <tr><th>인원 파악</th><td>모른다</td><td>정확히 안다</td></tr>
+      <tr><th>지원자</th><td>많다</td><td>적다</td></tr>
+      <tr><th>참가비 여유</th><td class="ok">높게 불러도 된다</td><td class="bad">낮춰야 온다</td></tr>
+    </tbody>
+  </table>
+  <p>
+    금액을 내리는 것은 언제든 되지만 <b>공고를 다시 올리면 시간이 간다</b> — 그사이 경기일이 다가온다.
+    <b>구장 속성이 여기에 곱해진다</b> — 좋은 구장이면 비싸도 오고 맨땅이면 싸도 안 온다.
+  </p>
 </section>
 
-<!-- ═══════════ S-09 ═══════════ -->
+<!-- ═══════════ S-09 · S-10 ═══════════ -->
 <section class="page">
-  <h2><span class="id">S-09</span>구장<span class="rt">클럽 · 탭 2</span></h2>
+  <h2><span class="id">S-09</span>구장<span class="rt">클럽 · 탭 없음</span></h2>
   <p class="lead">
-    매주 잡아야 하는 것. <b>싸면 규격이 안 맞고, 좋으면 경쟁이 심하고, 멀면 참석률이 떨어진다.</b>
-    겨울에는 대관료가 오르고 부상 위험이 붙는다.
+    구를 통틀어 구장이 2~5개다(3.6). <b>표가 5행짜리라 탭으로 나눌 크기가 아니다.</b>
   </p>
 
-  <p class="cap">SCREENSHOT · 예약 탭</p>
-  <div class="frame h400"><div class="g h400">
-    <div class="ttl"><span class="nv"><u>◀</u><u>▶</u></span><span class="cb">대신동FC › <i>구장</i></span>
-      <span class="rt">관악구 · 3월 3주차 예약</span></div>
-    <div class="mid">
-      <div class="tr">
-        <div class="cl"><b>대신동FC</b><i>창단 12년차 · 4승 2무 5패</i></div>
-        <p>운영</p><a href="#">이번 주</a><a href="#">회원 명단 <em>2</em></a><a href="#">라인업</a>
-        <a href="#">일정</a><a href="#">단톡방 <em>7</em></a>
-        <p>클럽</p><a href="#">재정 <em>!</em></a><a href="#">영입 <em>3</em></a><a href="#" class="on">구장</a><a href="#">규칙</a>
-        <p>기록</p><a href="#">경기 기록</a><a href="#">상대팀</a><a href="#">연대기</a><a href="#">내 정보</a>
-      </div>
-      <div class="mn">
-        <div class="tb"><span class="on">예약</span><span>구장 목록</span></div>
-        <div class="sp">
-          <div><i>주 구장</i><b>상평체육공원</b></div><div><i>이번 달 대관비</i><b>180,000</b></div>
-          <div><i>단골 등급</i><b class="u-g">3년 · 우대</b></div><div><i>기온</i><b class="u-y">3°C · 부상 +</b></div>
-        </div>
-        <div class="bdy">
-          <table class="t"><thead><tr><th style="width:88px">구장</th><th style="width:44px">거리</th><th style="width:52px">잔디</th>
-            <th style="width:52px">규격</th><th class="nn" style="width:56px">대관료</th><th style="width:64px">예약 방식</th>
-            <th style="width:64px">일 06:00</th><th style="width:64px">일 08:00</th><th>비고</th></tr></thead><tbody>
-            <tr class="sel"><td>상평체육공원</td><td>12분</td><td>인조</td><td>11인</td><td class="nn">45,000</td><td>단골 우대</td><td>예약됨</td><td>마감</td><td>주 구장 · 3년째</td></tr>
-            <tr><td>대신초등학교</td><td>6분</td><td>흙</td><td>8인</td><td class="nn">30,000</td><td>선착순</td><td class="u-g">가능</td><td class="u-g">가능</td><td>규격 미달 · 친선만</td></tr>
-            <tr><td>관악구민운동장</td><td>19분</td><td>천연</td><td>11인</td><td class="nn">80,000</td><td>추첨</td><td class="u-y">추첨 대기</td><td class="u-r">마감</td><td>시설 최상 · 경쟁 심함</td></tr>
-            <tr><td>봉천체육공원</td><td>24분</td><td>인조</td><td>11인</td><td class="nn">50,000</td><td>선착순</td><td class="u-g">가능</td><td class="u-g">가능</td><td>먼 편 · 참석률 하락</td></tr>
-            <tr><td>낙성대풋살장</td><td>15분</td><td>인조</td><td>5인</td><td class="nn">25,000</td><td>선착순</td><td class="u-g">가능</td><td class="u-g">가능</td><td>규격 미달</td></tr>
-          </tbody></table>
-          <div style="padding:9px 12px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
-            <div>
-              <p class="k">상평체육공원</p>
-              <div style="font-size:10.5px;color:var(--tx2);line-height:1.8">
-                인조잔디 · 11인 규격 · 조명 있음 · 주차 20대<br>
-                <b style="color:var(--tx)">단골 우대 3년차</b> — 일요일 06:00 슬롯 우선권<br>
-                화장실 노후 · 겨울 결빙 잦음</div>
-            </div>
-            <div>
-              <p class="k">이번 주 판단</p>
-              <div style="font-size:10.5px;color:var(--tx2);line-height:1.8">
-                3°C · 인조잔디 결빙 가능 → <span class="u-y">부상 확률 +</span><br>
-                대신초 흙구장은 싸지만 8인 규격 → <span class="u-r">정식 경기 불가</span><br>
-                구민운동장 추첨은 <span class="u-y">다음 주 결과</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="br"><span>예약 완료 <b>3/8</b></span><span>다음 예약 <b class="u-y">3/15 미정</b></span>
-      <span class="go">주 진행 ▶</span></div>
-  </div></div>
-
-  <h4>탭</h4>
-  <table class="tight">
-    <thead><tr><th style="width:24mm">탭</th><th style="width:52mm">보이는 것</th><th style="width:44mm">여기서 하는 결정</th><th>근거</th></tr></thead>
-    <tbody>
-      <tr><th>예약</th><td>이번 주 잡을 수 있는 구장 · 슬롯별 상태</td>
-        <td><b>어디를 잡을지.</b> 취소 시 90% 환불이지만 회원 불만이 오른다</td><td>3.6</td></tr>
-      <tr><th>구장 목록</th><td>구 안의 전 구장 · 속성 · 단골 등급 · 과거 이용 이력</td>
-        <td>주 구장을 바꿀지</td><td>3.6</td></tr>
-    </tbody>
-  </table>
-
-  <h4>설계 노트</h4>
-  <ul>
-    <li>예약 방식 3종(<b>선착순 · 추첨 · 단골 우대</b>)이 각각 다른 게임을 만든다.
-      단골 우대는 <b>한 곳을 오래 쓴 보상</b>이라 구단 정체성과 이어진다</li>
-    <li>규격이 안 맞는 구장(8인 · 5인)은 <b>친선만 가능</b>하다. 싸다고 아무 데나 못 잡는다</li>
-    <li>거리가 <b>참석률에 직접 걸린다.</b> 24분짜리 봉천은 싸고 자리도 있지만 사람이 덜 온다</li>
-    <li>기온이 스트립에 뜬다 — <code>3°C · 부상 +</code>. 겨울 야외는 예약이 쉬운 대신 위험하다</li>
-  </ul>
-</section>
-
-<!-- ═══════════ S-10 · S-12 · S-14 사양 ═══════════ -->
-<section class="page">
-  <h2><span class="id">S-10</span>규칙<span class="rt">클럽 · 시안 없음 · 사양</span></h2>
-  <p class="lead">
-    <b>규칙을 만드는 것이 이 게임에서 플레이어가 가진 유일한 실질 권한이다</b>(00-concept).
-    회장·총무·감독을 겸하지만 명령권은 없고, 대신 규칙을 세울 수 있다.
-  </p>
+  <h4>단일 화면 구성</h4>
   <table>
-    <thead><tr><th style="width:24mm">탭</th><th style="width:54mm">보이는 것</th><th style="width:44mm">여기서 하는 결정</th><th>근거</th></tr></thead>
+    <thead><tr><th style="width:28mm">섹션</th><th>들어가는 정보</th></tr></thead>
     <tbody>
-      <tr><th>규칙 목록</th><td>규칙 8종 on/off + 기준값. 각 규칙마다 <b>현재 반발 정도</b> 표시</td>
-        <td>어떤 규칙을 둘지 — 실제 변경은 <b>O-7</b>을 거친다</td><td>8장</td></tr>
-      <tr><th>벌금</th><td>항목별 금액 · 이번 달 징수액 · 면제 이력</td><td>금액 조정, 개별 면제</td><td>8장 · 9장</td></tr>
-      <tr><th>위반 이력</th><td>누가 언제 무엇을 어겼는지. 누적 횟수</td>
-        <td>방출 사유가 되는지 판단</td><td>7장 이탈 경로</td></tr>
+      <tr><th>요약 스트립</th><td>주 구장 · 이번 달 누적 대관비 · <b>단골 등급</b> · 기온 + 부상 영향</td></tr>
+      <tr><th>구장 표 10열</th><td>구장명 · 거리(분) · 잔디 · 규격 · 대관료 · <b>예약 방식</b> ·
+        슬롯별 상태 · 단골 등급 · 과거 이용 횟수 · 비고</td></tr>
+      <tr><th>선택 구장 상세</th><td>시설(조명 · 주차 · 화장실) · 등급별 혜택 · 알려진 단점</td></tr>
+      <tr><th>이번 주 판단</th><td>텍스트 3줄 — 기온 · 규격 · 추첨 결과 대기</td></tr>
+      <tr><th>정기 예약</th><td>단골 3년+ 시 자동 갱신. <b>깨졌을 때만 알림</b></td></tr>
     </tbody>
   </table>
-  <ul>
-    <li><b>규칙에는 반드시 반발이 따른다.</b> 무단 불참 벌금을 세우면 성실한 사람은 좋아하고
-      바쁜 사람은 싫어한다. 규칙 목록에 그 예상이 미리 표시된다</li>
-    <li>규칙을 <b>안 지키게 두는 것도 선택</b>이다. 유명무실한 규칙은 있으나 마나지만,
-      없애는 순간 누군가는 "왜 이제 와서"라고 한다(7.9)</li>
-    <li>변경 행위를 <b>O-7 오버레이로 분리</b>한 이유 — 체크박스로 처리하면 무게가 안 실린다.
-      되돌릴 수 없고 전원의 만족도에 영향을 준다</li>
-  </ul>
+  <p><b>예약 방식 3종</b> — 선착순 / 추첨 / 단골 우대. 각각 다른 게임이 된다.
+    <b>규격 미달 구장</b>(8인 · 5인)은 친선만 가능.</p>
 
-  <h2 style="margin-top:9mm"><span class="id">S-12</span>상대팀<span class="rt">기록 · 시안 없음 · 사양</span></h2>
-  <table>
-    <thead><tr><th style="width:24mm">탭</th><th style="width:54mm">보이는 것</th><th style="width:44mm">여기서 하는 결정</th><th>근거</th></tr></thead>
-    <tbody>
-      <tr><th>팀 목록</th><td>구 안의 팀 풀 + 거리로 확장된 인접 구. 전력 · 매너 · 우리와의 관계</td>
-        <td>다음 경기를 누구와 잡을지</td><td>3.7</td></tr>
-      <tr><th>팀 상세</th><td>성향 4축 · 알려진 선수 · <b>상대 전적</b> · 과거 사건 로그</td>
-        <td>포메이션·지시 조정(→ S-04)</td><td>12장 라이벌</td></tr>
-    </tbody>
-  </table>
-  <ul>
-    <li>상대 전적을 <b>별도 탭으로 두지 않는다.</b> 팀 상세 안에 있으면 된다</li>
-    <li><b>라이벌은 자연 발생한다.</b> 자주 붙고, 사건이 쌓이고, 관계 수치가 내려가면
-      그 팀 카드가 다르게 표시된다. 시나리오로 고정된 라이벌은 없다</li>
-    <li>경기 취소를 반복하면 <b>여기 있는 팀들이 우리를 기피</b>한다(11.7)</li>
-  </ul>
-
-  <h2 style="margin-top:9mm"><span class="id">S-14</span>내 정보<span class="rt">기록 · 신규 · 사양</span></h2>
-  <p class="lead">
-    화면을 그려보다가 <b>빠져 있는 것을 발견했다.</b> 플레이어도 회원인데
-    자기 정보를 볼 곳이 없었다 — 일정 화면에 직업만 한 줄 뜨는 게 전부였다.
-  </p>
+  <h4>주 구장 지정을 없앤다</h4>
   <table class="tight">
-    <thead><tr><th style="width:28mm">영역</th><th>내용</th></tr></thead>
     <tbody>
-      <tr><th>기본</th><td>이름 · 나이 · 직함(회장 · 총무 · 감독 겸임) · 가입 연차</td></tr>
-      <tr><th>생활</th><td>직업 · 근무 형태 · <b>주간 가용 칸 수</b> · 거주지 · 혼인/자녀</td></tr>
-      <tr><th>능력</th><td>본인도 뛰므로 능력 5 · 기질 6이 있다. <b>나이를 먹으면 같이 떨어진다</b></td></tr>
-      <tr><th>신뢰</th><td><b>회원별 신뢰 목록.</b> 전술 수용률과 교체 거부율의 근거(11.5)</td></tr>
-      <tr><th>이력</th><td>인수 시점부터의 재임 기록 · 통산 전적 · 거쳐 보낸 회원 수</td></tr>
+      <tr><td style="width:34mm" class="ok">단골 등급</td><td>누적 이용 → 등급 → 우선권. <b>자연 발생</b></td></tr>
+      <tr><td class="bad">주 구장 지정</td><td>명시적 선택 버튼 — <b>삭제</b></td></tr>
+    </tbody>
+  </table>
+  <p>
+    둘 다 있으면 중복이고 <b>톤에도 안 맞는다</b> — 조기축구단이 "주 구장을 지정"하지 않는다.
+    매주 거기 가다 보니 단골이 되는 것이다. 스트립의 <code>주 구장</code>은
+    <b>지정값이 아니라 최근 가장 많이 쓴 곳</b>을 자동 표시한다.
+  </p>
+
+  <h4>정기 예약 — 단골 등급의 보상</h4>
+  <table class="tight">
+    <thead><tr><th style="width:30mm">등급</th><th>혜택</th></tr></thead>
+    <tbody>
+      <tr><th>신규</th><td>매주 직접 예약</td></tr>
+      <tr><th>단골 1~2년</th><td>슬롯 우선권</td></tr>
+      <tr><th>단골 3년+</th><td class="ok"><b>정기 예약</b> — 매주 자동 갱신</td></tr>
     </tbody>
   </table>
   <div class="flag">
-    <b>신뢰가 여기 있어야 하는 이유.</b> 전술 화면(S-04)은 "누가 내 말을 안 듣는가"를 보여주지만,
-    <b>왜 안 듣는지의 절반은 나에게 있다.</b> 신뢰 52라는 숫자를 볼 곳이 필요하다.
+    <b>S-01 할 일의 `구장 미예약`이 예외 상황이 된다.</b> 평소엔 조용하다가
+    정기가 깨졌을 때(구장 공사 · 대회로 인한 취소)만 뜬다.
+    <b>놓쳐서 취소되는 사고가 초반에만 일어나고, 팀이 자리 잡으면 사라진다</b> — 성장의 실감이 여기서도 나온다.
+  </div>
+
+  <h4>예약 실패 — 경기 취소의 두 번째 경로</h4>
+  <pre>추첨 떨어짐 → 다른 구장 시도 → 다 마감 → <b>경기 취소</b></pre>
+  <table class="tight">
+    <thead><tr><th style="width:30mm"></th><th style="width:38mm">인원 미달 (11.7)</th><th>구장 미확보</th></tr></thead>
+    <tbody>
+      <tr><th>회원 만족도</th><td class="bad">크게 하락</td><td><b>작게 하락</b> — 총무 잘못이라기보다 운</td></tr>
+      <tr><th>상대팀 관계</th><td>악화</td><td>똑같이 악화</td></tr>
+      <tr><th>대관료</th><td>90% 환불</td><td>해당 없음 (예약 자체가 없다)</td></tr>
+      <tr><th>구단 평판</th><td>하락</td><td>하락</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:9mm"><span class="id">S-10</span>규칙<span class="rt">클럽 · 2탭</span></h2>
+  <p class="lead"><b>규칙을 만드는 것이 플레이어의 유일한 실질 권한이다</b>(00-concept).</p>
+  <table>
+    <thead><tr><th style="width:28mm">탭</th><th>섹션 구성</th></tr></thead>
+    <tbody>
+      <tr><th>1 · 규칙 목록</th><td>규칙 8종 × (on/off · <b>기준값</b> · <b>벌칙 금액</b> · <b>반대하는 사람</b>) — 🔢 기준값 미정</td></tr>
+      <tr><th>2 · 위반 이력</th><td>누가 · 언제 · 무엇을 · 처리 결과. <b>누적 횟수가 방출 사유가 된다</b></td></tr>
+    </tbody>
+  </table>
+
+  <h4>벌금 탭을 없앤 이유 — 담던 것이 전부 다른 곳에 있었다</h4>
+  <table class="tight">
+    <thead><tr><th style="width:34mm">벌금 탭 항목</th><th>실제 위치</th></tr></thead>
+    <tbody>
+      <tr><td>항목별 금액</td><td><b>규칙 목록의 열</b> — 규칙마다 벌칙이 붙는다</td></tr>
+      <tr><td>이번 달 징수액</td><td><b>S-07 재정</b> — 거래 내역 <code>벌금</code> 구분</td></tr>
+      <tr><td>면제 이력</td><td>위반 이력의 처리 결과 열</td></tr>
+      <tr><td>누적</td><td>S-07</td></tr>
+    </tbody>
+  </table>
+  <p>규칙 8종 각각에 <code>무단 불참 → 10,000</code>이 붙으면 <b>그것이 곧 벌금 설정이다.</b></p>
+
+  <h4>반발은 수치가 아니라 이름으로</h4>
+  <p>
+    <code>현재 반발 정도</code>를 수치로 보여주면 <b>만족도에서 뺀 것과 같은 문제</b>가 생긴다.
+    <b>누가 싫어하는지 이름 목록</b>으로 표시한다 — O-7의 "찬성할 사람 / 반대할 사람"과
+    같은 형식이라 컴포넌트를 재사용한다.
+  </p>
+  <div class="note">
+    <b>규칙에는 반드시 반발이 따른다.</b> 무단 불참 벌금을 세우면 성실한 사람은 좋아하고 바쁜 사람은 싫어한다.
+    <b>변경 행위는 O-7로 분리한다</b> — 체크박스로 처리하면 무게가 안 실린다.<br>
+    위반 이력이 <b>S-03 개인 연표와 다른 점</b>은 범위다. S-03은 한 사람의 시간순, S-10은 <b>전원의 시간순</b> —
+    "이 규칙이 실제로 작동하나"는 전원 목록이라야 보인다.
   </div>
 </section>
 
-<!-- ═══════════ S-11 ═══════════ -->
+<!-- ═══════════ S-11 · S-12 ═══════════ -->
 <section class="page">
-  <h2><span class="id">S-11</span>경기 기록<span class="rt">기록 · 탭 2</span></h2>
+  <h2><span class="id">S-11</span>경기 기록<span class="rt">기록 · 2탭</span></h2>
   <p class="lead">
-    지나간 경기의 목록. <b>스코어보다 "기억할 만한 일" 열이 본문이다</b> —
-    이 게임에서 경기는 결과가 아니라 사건이다.
+    <b>능력을 줄 세우는 것은 막았지만 기록을 줄 세우는 것은 막지 않는다.</b>
+    능력은 내부 평가고, 기록은 실제로 일어난 일이다.
   </p>
 
-  <p class="cap">SCREENSHOT · 경기 목록 탭</p>
-  <div class="frame h400"><div class="g h400">
-    <div class="ttl"><span class="nv"><u>◀</u><u>▶</u></span><span class="cb">대신동FC › <i>경기 기록</i></span>
-      <span class="rt">2029 시즌 · 11경기</span></div>
-    <div class="mid">
-      <div class="tr">
-        <div class="cl"><b>대신동FC</b><i>창단 12년차 · 4승 2무 5패</i></div>
-        <p>운영</p><a href="#">이번 주</a><a href="#">회원 명단 <em>2</em></a><a href="#">라인업</a>
-        <a href="#">일정</a><a href="#">단톡방 <em>7</em></a>
-        <p>클럽</p><a href="#">재정 <em>!</em></a><a href="#">영입 <em>3</em></a><a href="#">구장</a><a href="#">규칙</a>
-        <p>기록</p><a href="#" class="on">경기 기록</a><a href="#">상대팀</a><a href="#">연대기</a><a href="#">내 정보</a>
-      </div>
-      <div class="mn">
-        <div class="tb"><span class="on">경기 목록</span><span>개인 기록</span></div>
-        <div class="sp">
-          <div><i>전적</i><b>4승 2무 5패</b></div><div><i>득실</i><b>21 : 26</b></div>
-          <div><i>최다 득점</i><b>양준호 7골</b></div><div><i>개근</i><b>최승철 · 서민규</b></div>
-        </div>
-        <div class="bdy">
-          <table class="t"><thead><tr><th style="width:52px">날짜</th><th style="width:88px">상대</th><th style="width:44px">결과</th>
-            <th style="width:70px">구장</th><th class="nn" style="width:40px">출전</th><th class="nn" style="width:40px">용병</th>
-            <th style="width:78px">득점</th><th>기억할 만한 일</th></tr></thead><tbody>
-            <tr><td>03-01</td><td>대신초FC</td><td class="u-r">1 : 2</td><td>상평</td><td class="nn">11</td><td class="nn">1</td><td>김상수</td><td>후반 체력 붕괴 · 3명이 걸어다님</td></tr>
-            <tr><td>02-22</td><td>봉천유나이티드</td><td class="u-g">3 : 1</td><td>상평</td><td class="nn">12</td><td class="nn">0</td><td>양준호2 김상수</td><td>양준호 첫 멀티골</td></tr>
-            <tr><td>02-15</td><td>신림OB</td><td class="u-y">2 : 2</td><td>대신초</td><td class="nn">10</td><td class="nn">2</td><td>김상수 정우성</td><td>용병 2명이 더 잘 뜀</td></tr>
-            <tr><td>02-08</td><td>상평STAR</td><td class="u-r">0 : 3</td><td>상평</td><td class="nn">11</td><td class="nn">1</td><td>—</td><td class="u-r">완패. 이규민 1쿼터 출전</td></tr>
-            <tr><td>02-01</td><td>관악FC</td><td class="u-g">2 : 1</td><td>상평</td><td class="nn">13</td><td class="nn">0</td><td>김상수 양준호</td><td>심기국 58세 결승 도움</td></tr>
-            <tr><td>01-25</td><td>낙성대클럽</td><td class="u-r">1 : 4</td><td>상평</td><td class="nn">9</td><td class="nn">2</td><td>배진호</td><td class="u-r">인원 부족 · 수적 열세</td></tr>
-            <tr><td>01-18</td><td>서원FC</td><td class="u-g">4 : 2</td><td>구민</td><td class="nn">12</td><td class="nn">0</td><td>양준호3 문상혁</td><td>양준호 해트트릭</td></tr>
-            <tr><td>01-11</td><td>대신초FC</td><td class="u-y">1 : 1</td><td>대신초</td><td class="nn">11</td><td class="nn">1</td><td>정우성</td><td>박현범 경고 · 상대와 언쟁</td></tr>
-            <tr><td>01-04</td><td>봉천유나이티드</td><td class="u-r">2 : 5</td><td>봉천</td><td class="nn">10</td><td class="nn">1</td><td>김상수2</td><td class="u-r">원정 · 참석률 최저</td></tr>
-            <tr><td>12-28</td><td>신림OB</td><td class="u-g">3 : 2</td><td>상평</td><td class="nn">12</td><td class="nn">0</td><td>김상수 양준호 곽진수</td><td>곽진수 데뷔골</td></tr>
-            <tr><td>12-21</td><td>관악FC</td><td class="u-r">1 : 3</td><td>상평</td><td class="nn">11</td><td class="nn">1</td><td>양준호</td><td>영하 6도 · 윤현빈 부상</td></tr>
-          </tbody></table>
-        </div>
-      </div>
-    </div>
-    <div class="br"><span>11경기</span><span>평균 출전 <b>11.1명</b></span><span>용병 <b>9회</b></span>
-      <span class="go">주 진행 ▶</span></div>
-  </div></div>
+  <h4>공통 · 연도 토글</h4>
+  <p><code>2029</code> / <code>2028</code> / … / <b><code>통산</code></b> —
+    52주 연중이라 비시즌이 없지만(D3~D4) <b>기록은 연 단위로 끊는다.</b>
+    스트립이 <code>2029 시즌 · 11경기</code>인데 탭 2가 시즌인지 통산인지 불명확했다.</p>
 
-  <h4>탭</h4>
+  <h4>탭 1 · 경기 목록 — 표 8열</h4>
+  <p>날짜 · 상대 · 결과 · 구장 · <b>출전 인원</b> · <b>용병 수</b> · 득점자 · <b>기억할 만한 일</b></p>
+  <ul>
+    <li><code>기억할 만한 일</code>은 이벤트 로그에서 자동으로 뽑은 한 줄.
+      <b>득점보다 먼저 읽히도록 폭을 넓게</b> 잡는다</li>
+    <li><b><code>용병 수</code> 열이 있는 이유</b> — <i>"우리 팀으로 이긴 게 맞나"</i>라는 질문이 여기서 생긴다</li>
+    <li>행 더블클릭 → <b>하이라이트 리플레이</b>. 틱을 저장하지 않고 <b>같은 시드로 엔진을 다시 돌린다</b>(11.4)</li>
+  </ul>
+
+  <h4>탭 2 · 개인 기록 — S-02와 열을 가른다</h4>
   <table class="tight">
-    <thead><tr><th style="width:24mm">탭</th><th style="width:54mm">보이는 것</th><th style="width:44mm">여기서 하는 결정</th><th>근거</th></tr></thead>
+    <thead><tr><th style="width:38mm">화면</th><th>담는 것</th></tr></thead>
     <tbody>
-      <tr><th>경기 목록</th><td>전 경기 로그. 행을 더블클릭하면 <b>하이라이트 리플레이</b>로 진입</td>
-        <td>— (열람). 다만 리플레이 진입점</td><td>11.8</td></tr>
-      <tr><th>개인 기록</th><td>회원별 통산 — 출전 · 득점 · 도움 · 평점 · 경고. <b>칭호 획득 근거</b></td>
-        <td>— (열람)</td><td>2.12 칭호</td></tr>
+      <tr><th>S-02 회원 명단</th><td><b>사람 정보</b> — 나이 · 가입 · 직업 · 상태(얼굴) · 칭호</td></tr>
+      <tr><th>S-11 개인 기록</th><td><b>경기 기록만</b> — 출전 · 쿼터 · 득점 · 도움 · 평균 평점 · 경고</td></tr>
+    </tbody>
+  </table>
+  <p>
+    이 탭의 고유 가치는 <b>랭킹</b>이다. 득점왕 · 도움왕 · 개근이 <b>칭호(2.12)의 근거</b>가 된다.
+    그래서 정렬이 열마다 의미가 있고, S-02와 달리 <b>수치를 줄 세우는 것이 목적</b>이다.
+  </p>
+
+  <h2 style="margin-top:10mm"><span class="id">S-12</span>상대팀<span class="rt">기록 · 탭 없음</span></h2>
+  <p class="lead">
+    탭 2개를 없앤 이유가 다른 화면들과 다르다 — <b>중복이 아니라 네비게이션 규칙 위반</b>이었다.
+  </p>
+  <div class="flag">
+    05-ui.md 네비게이션 3단은 <b>"표 행 더블클릭 → 상세"</b>로 정해져 있다.
+    S-02 → S-03이 그 패턴인데 <b>S-12만 같은 관계를 탭으로</b> 처리하고 있었다.
+    구 안의 팀이 3~5개 + 인접 구라 표가 짧다 —
+    <b>S-04 · S-08과 같은 목록 + 우측 패널</b> 구조로 가면 컴포넌트가 그대로 재사용된다.
+  </div>
+  <table>
+    <thead><tr><th style="width:30mm">영역</th><th>들어가는 정보</th></tr></thead>
+    <tbody>
+      <tr><th>좌측 · 팀 목록</th><td>팀명 · 거리 · 전력 · 매너 · <b>우리와의 관계</b> · 통산 전적</td></tr>
+      <tr><th>우측 · 팀 상세</th><td>성향 4축 · 알려진 선수 · <b>경기별 로그</b> · 과거 사건 · 관계 변화 이력</td></tr>
     </tbody>
   </table>
   <ul>
-    <li><b>용병 열이 있다.</b> 9회 불렀다는 사실이 표에 남는다 —
-      "우리 팀으로 이긴 게 맞나"라는 질문이 여기서 생긴다</li>
-    <li>리플레이는 <b>틱을 저장하지 않는다.</b> 같은 시드로 엔진을 다시 돌린다(11.4)</li>
-    <li>"기억할 만한 일"은 이벤트 로그에서 <b>자동으로 뽑은 한 줄</b>이다.
-      득점보다 이 열이 먼저 읽히도록 폭을 넓게 잡았다</li>
+    <li><b>상대 전적을 별도로 두지 않는다.</b> 경기별 로그가 곧 전적이다</li>
+    <li><b>라이벌은 자연 발생한다.</b> 자주 붙고 사건이 쌓이고 관계가 내려가면 목록에서 표시가 달라진다.
+      <b>시나리오 고정 라이벌 없음</b></li>
+    <li>경기 취소를 반복하면 <b>여기 팀들이 우리를 기피한다</b> (11.7 · S-09)</li>
   </ul>
 </section>
 
 <!-- ═══════════ S-13 ═══════════ -->
 <section class="page">
-  <h2><span class="id">S-13</span>연대기<span class="rt">기록 · 정서적 결산</span></h2>
+  <h2><span class="id">S-13</span>연대기<span class="rt">기록 · 3탭</span></h2>
   <p class="lead">
-    <b>이 게임의 결산 화면이다.</b> 스탯이 아니라 <b>누가 왔다가 갔는지</b>가 본문이다.
-    탭 이름을 "명예 회원"에서 <b>"거쳐 간 사람들"</b>로 바꿨다 —
-    명예롭게 떠난 사람만 있는 게 아니다.
+    <b>이 게임의 정서적 결산 화면.</b> 1년차에는 비어 있고 10년차에는 게임 전체의 요약이 된다.
   </p>
 
-  <p class="cap">SCREENSHOT · 거쳐 간 사람들 탭</p>
-  <div class="frame h400"><div class="g h400">
-    <div class="ttl"><span class="nv"><u>◀</u><u>▶</u></span><span class="cb">대신동FC › 연대기 › <i>거쳐 간 사람들</i></span>
-      <span class="rt">창단 2017.04 ~ · 12년차</span></div>
+  <p class="cap">SCREENSHOT · 거쳐 간 사람들 · 사후 공개</p>
+  <div class="frame h420"><div class="g h420">
+    <div class="ttl"><span class="nv"><u>◀</u><u>▶</u></span><span class="cb">대신동FC › <i>연대기</i></span>
+      <span class="rt">창단 12년차 · 2017~2029</span></div>
     <div class="mid">
       <div class="tr">
         <div class="cl"><b>대신동FC</b><i>창단 12년차 · 4승 2무 5패</i></div>
         <p>운영</p><a href="#">이번 주</a><a href="#">회원 명단 <em>2</em></a><a href="#">라인업</a>
-        <a href="#">일정</a><a href="#">단톡방 <em>7</em></a>
+        <a href="#">일정</a><a href="#">단톡방 <em>2</em></a>
         <p>클럽</p><a href="#">재정 <em>!</em></a><a href="#">영입 <em>3</em></a><a href="#">구장</a><a href="#">규칙</a>
         <p>기록</p><a href="#">경기 기록</a><a href="#">상대팀</a><a href="#" class="on">연대기</a><a href="#">내 정보</a>
       </div>
       <div class="mn">
         <div class="tb"><span>연표</span><span class="on">거쳐 간 사람들</span><span>통계</span></div>
         <div class="sp">
-          <div><i>지금까지</i><b>47명</b></div><div><i>현재</i><b>12명</b></div>
-          <div><i>평균 재적</i><b>2년 4개월</b></div><div><i>가장 오래</i><b>심기국 · 12년</b></div>
+          <div><i>거쳐 간 사람</i><b>47명</b></div>
+          <div><i>현재 인원</i><b>30명</b></div>
+          <div><i>평균 재적</i><b>2.4년</b></div>
+          <div><i>물려받은 회원</i><b class="u-y">3 / 14 (21%)</b></div>
         </div>
-        <div class="bdy">
-          <table class="t"><thead><tr><th style="width:52px">이름</th><th style="width:66px">재적</th><th style="width:44px">출전</th>
-            <th style="width:36px">득점</th><th style="width:70px">떠난 이유</th><th style="width:60px">마지막</th><th>남긴 것</th></tr></thead><tbody>
-            <tr><td>정한수</td><td>2017~2024 · 7년</td><td class="nn">218</td><td class="nn">4</td><td>이사 (부산)</td><td>2024-08</td><td>창단 멤버. 첫 유니폼을 이 사람이 골랐다</td></tr>
-            <tr><td>오세진</td><td>2017~2021 · 4년</td><td class="nn">142</td><td class="nn">61</td><td>무릎 수술</td><td>2021-03</td><td>구단 최다 득점. 지금도 가끔 구경 온다</td></tr>
-            <tr><td>류기범</td><td>2018~2027 · 9년</td><td class="nn">263</td><td class="nn">12</td><td>자연 이탈</td><td>2027-11</td><td>3년간 총무. 회계 장부 양식이 이 사람 것</td></tr>
-            <tr><td>강대호</td><td>2019~2022 · 3년</td><td class="nn">64</td><td class="nn">8</td><td class="u-r">규칙 위반 방출</td><td>2022-06</td><td>무단 불참 11회. 팀이 갈라질 뻔했다</td></tr>
-            <tr><td>손민기</td><td>2020~2026 · 6년</td><td class="nn">176</td><td class="nn">23</td><td>육아</td><td>2026-04</td><td>둘째가 태어나고 두 달 나오다 말았다</td></tr>
-            <tr><td>배준영</td><td>2021~2023 · 2년</td><td class="nn">31</td><td class="nn">2</td><td class="u-y">출전 불만</td><td>2023-09</td><td>거의 못 뛰었다. 잘 챙기지 못했다</td></tr>
-            <tr><td>임태식</td><td>2022~2028 · 6년</td><td class="nn">154</td><td class="nn">7</td><td>타 지역 단체 이동</td><td>2028-02</td><td>회사 동료 넷과 함께 들어왔다가 함께 나갔다</td></tr>
-            <tr><td>고영주</td><td>2023~2025 · 2년</td><td class="nn">48</td><td class="nn">0</td><td>자연 이탈</td><td>2025-07</td><td>말수가 적었다. 언제 안 나왔는지도 모른다</td></tr>
-            <tr><td>진성호</td><td>2024~2028 · 4년</td><td class="nn">97</td><td class="nn">15</td><td>이사 (경기)</td><td>2028-10</td><td>가끔 용병으로 온다</td></tr>
-          </tbody></table>
-          <div style="padding:8px 12px;font-size:10.5px;color:var(--tx3);line-height:1.75;border-top:1px solid var(--bd)">
-            <b style="color:var(--tx2)">배준영 · 2년 · 31경기</b> —
-            "거의 못 뛰었다. 잘 챙기지 못했다"는 문장은 플레이어의 선택이 만든 기록이다.
-            <b style="color:var(--tx2)">이규민이 지금 그 자리에 있다.</b></div>
+        <div class="bdy" style="display:grid;grid-template-columns:1fr 258px">
+          <div style="overflow:hidden">
+            <table class="t"><thead><tr><th style="width:52px">이름</th><th style="width:104px">재적</th>
+              <th class="nn" style="width:36px">출전</th><th class="nn" style="width:30px">골</th>
+              <th style="width:94px">떠난 이유</th><th style="width:26px"></th><th>남긴 것</th></tr></thead><tbody>
+              <tr><td>정한수</td><td>2017~2024 · 7년</td><td class="nn">241</td><td class="nn">18</td>
+                <td>이사</td><td><span class="fc f2"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td>창단 멤버 · 팀 이름을 지었다</td></tr>
+              <tr><td>류기범</td><td>2017~2022 · 5년</td><td class="nn">188</td><td class="nn">3</td>
+                <td>육아</td><td><span class="fc f2"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td>회계 장부 양식이 이 사람 것</td></tr>
+              <tr><td>손민기</td><td>2018~2023 · 5년</td><td class="nn">156</td><td class="nn">41</td>
+                <td class="u-y">출전 불만</td><td><span class="fc f4"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td>2020 득점왕</td></tr>
+              <tr><td>오세진</td><td>2019~2022 · 3년</td><td class="nn">98</td><td class="nn">7</td>
+                <td>자연 이탈</td><td><span class="fc f3"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td></td></tr>
+              <tr><td>임태식</td><td>2020~2024 · 4년</td><td class="nn">132</td><td class="nn">12</td>
+                <td class="u-r">규칙 위반 방출</td><td><span class="fc f5"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td>무단 불참 4회</td></tr>
+              <tr class="sel"><td>배준영</td><td>2021~2023 · 2년</td><td class="nn">31</td><td class="nn">1</td>
+                <td>출전 불만</td><td><span class="fc f3" style="color:#3A2F1E"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td>첫 유니폼을 이 사람이 골랐다</td></tr>
+              <tr><td>강대호</td><td>2018~2021 · 3년</td><td class="nn">104</td><td class="nn">22</td>
+                <td>이사</td><td><span class="fc f2"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td></td></tr>
+              <tr><td>박선우</td><td>2022~2023 · 1년</td><td class="nn">18</td><td class="nn">0</td>
+                <td class="u-y">출전 불만</td><td><span class="fc f4"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td></td></tr>
+              <tr><td>홍기표</td><td>2023~2025 · 2년</td><td class="nn">62</td><td class="nn">4</td>
+                <td>자연 이탈</td><td><span class="fc f3"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td>단톡방 이름을 이 사람이 지었다</td></tr>
+              <tr><td>여승민</td><td>2024~2026 · 2년</td><td class="nn">71</td><td class="nn">9</td>
+                <td class="u-y">출전 불만</td><td><span class="fc f4"><i class="eL"></i><i class="eR"></i><i class="m"></i></span></td>
+                <td></td></tr>
+            </tbody></table>
+            <div style="font-size:9.5px;color:var(--tx3);padding:4px 9px">＋ 37명 더</div>
+          </div>
+          <div class="pan">
+            <div style="font-size:13px;color:var(--tx)">배준영</div>
+            <div style="color:var(--tx3);font-size:10px;margin-bottom:7px">2021~2023 · 2년 · 31경기 · 1골</div>
+            <p class="k">마지막 6개월</p>
+            <div style="font-size:10.5px;line-height:1.9;color:var(--tx2);font-family:var(--mono)">
+              출전 &nbsp;&nbsp;<span style="color:var(--tx)">1Q · 0Q · 0Q · 2Q · 0Q · 0Q</span><br>
+              만족도 <span class="u-r">44 → 38 → 31 → 25 → 19 → 12</span><br>
+              만난 횟수 <span class="u-r">0회</span></div>
+            <div style="display:flex;align-items:center;gap:7px;margin-top:7px;
+                        border-top:1px solid var(--bd2);padding-top:6px">
+              <span class="fc f3" style="width:22px;height:22px"><i class="eL"></i><i class="eR"></i><i class="m"></i></span>
+              <div style="font-size:10.5px;line-height:1.4;color:var(--tx2)">
+                표시되던 얼굴 <b style="color:var(--tx)">"그저 그럼"</b><br>
+                <span style="color:var(--tx3)">← 참을성 71</span></div></div>
+            <div class="warnbox" style="margin-top:9px">
+              <b>거의 못 뛰었다. 잘 챙기지 못했다.</b>
+              <span style="display:block;margin-top:3px;color:#EFB2A4">
+                이규민이 지금 그 자리에 있다.</span></div>
+            <p class="k" style="margin-top:8px">남긴 것</p>
+            <div style="font-size:10.5px;color:var(--tx2);line-height:1.55">
+              첫 유니폼을 이 사람이 골랐다.</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="br"><span>거쳐 간 사람 <b>35명</b></span><span>현재 <b>12명</b></span>
-      <span class="go">주 진행 ▶</span></div>
+    <div class="br"><span>회원 <b>30</b>명</span><span>거쳐 간 <b>47</b>명</span>
+      <span class="u-y">물려받은 회원 3</span><span class="go">주 진행 ▶</span></div>
   </div></div>
+  <p class="shotnote">
+    나는 <b>"그저 그럼"</b>으로 보고 있었고, 실제로는 <b>44에서 12까지</b> 내려가는 중이었고,
+    <b>한 번도 안 만났다.</b> 2.6의 참을성 보정이 <b>사후에 청구서로 돌아오는 유일한 지점</b>이다.
+  </p>
 
-  <h4>탭</h4>
+  <h4>떠난 뒤에는 숫자를 공개한다</h4>
+  <p>
+    살아 있을 때는 얼굴만 보인다. 참을성이 높으면 그마저 가려진다(2.6).
+    <b>그런데 떠나고 나면 전부 보여준다 — 이미 늦었으니까 보여줘도 된다.</b>
+  </p>
+  <div class="note">
+    <b>마지막 얼굴을 남긴다.</b> 떠날 때의 표시값 그대로다 —
+    참을성 높은 사람은 <b>웃는 얼굴로 기록된다.</b> 그게 더 아프다.<br>
+    <b>하단 연결 문구</b>가 과거 기록을 현재의 경고로 잇는다 —
+    <code>… 이규민이 지금 그 자리에 있다</code>.
+  </div>
+
+  <h4>물려받은 회원 비율이 장기 목표의 계기판이다</h4>
+  <pre>물려받은 회원   3 / 14  (21%)
+내가 받은 회원  20</pre>
+  <p>
+    GDD 4.10이 명시했는데 <b>화면 어디에도 없었다.</b>
+    <b>0이 되는 순간 이벤트가 발생한다</b> — <i>"이제 이 팀에 나보다 오래 있은 사람이 없다."</i>
+    E63의 "그만두는 순간" 후보이기도 하다. <code>가장 오래 있은 사람</code>은 이 지표에 흡수된다.
+  </p>
+
+  <h4>탭 1 · 연표 — 연도를 고르면 그 시점 명단</h4>
+  <pre>2024년 8월  — 정한수가 마지막으로 뛴 달
+
+  서민규 · 이정표 · 최승철 · 정한수 · 류기범 · 손민기
+  오세진 · 임태식 · 심기국 · 강대호 · 배준영
+
+  ▸ 지금도 남아 있는 사람   <b>2명</b></pre>
+  <p>
+    4.10의 <i>"5년이 지나니 그때 있던 사람은 3명만 남았다"</i>가 화면에서 일어난다.
+    스냅샷은 <b>연 1회 + 이탈 시점</b>에 저장한다 — 이름 목록이라 용량이 작다.
+    <b>플레이어 이전의 시간도 있다</b> — 인수(D1) 이전 연차는 요약만 표시된다.
+  </p>
+
+  <h4>탭 3 · 이탈 사유 분포가 내 운영의 지문이다</h4>
   <table class="tight">
-    <thead><tr><th style="width:30mm">탭</th><th style="width:54mm">보이는 것</th><th>성격</th></tr></thead>
+    <thead><tr><th style="width:34mm">분포</th><th>읽히는 것</th></tr></thead>
     <tbody>
-      <tr><th>연표</th><td>연도별 주요 사건 — 창단 · 대회 · 분열 · 인수 · 첫 우승</td>
-        <td>구단의 역사. <b>플레이어 이전의 시간도 있다</b>(인수 시나리오)</td></tr>
-      <tr><th>거쳐 간 사람들</th><td>떠난 회원 전원 · 재적 기간 · 출전 · 떠난 이유 · <b>남긴 것</b></td>
-        <td>이 화면의 본체</td></tr>
-      <tr><th>통계</th><td>통산 전적 · 평균 재적 기간 · 이탈 사유 분포 · 최다 기록</td>
-        <td>내가 어떤 운영을 해왔는지가 분포로 드러난다</td></tr>
+      <tr><th>출전 불만이 많다</th><td>이기려고만 했다</td></tr>
+      <tr><th>자연 이탈이 많다</th><td>챙기지 못했다</td></tr>
+      <tr><th>이사 · 육아가 많다</th><td>어쩔 수 없었다</td></tr>
+      <tr><th>규칙 위반 방출</th><td>문턱을 높게 세웠다</td></tr>
+    </tbody>
+  </table>
+  <div class="flag">
+    이것을 <b>문장 한 줄로 요약</b>한다 —
+    <i>"12년 동안 47명이 거쳐 갔다. 그중 <b>11명이 못 뛰어서 나갔다.</b>"</i><br>
+    <b>E69와 충돌하지 않는다</b> — 진행 중에 판단을 대신해 주는 것이 아니라 <b>결산</b>이다.
+    이미 일어난 일을 세어 보여주는 것뿐이다.
+  </div>
+</section>
+
+<!-- ═══════════ S-14 · 설정 ═══════════ -->
+<section class="page">
+  <h2><span class="id">S-14</span>내 정보<span class="rt">기록 · 탭 없음</span></h2>
+  <p class="lead">
+    화면을 그려보다가 <b>빠져 있는 것을 발견했다.</b>
+    플레이어도 회원인데 자기 정보를 볼 곳이 없었다.
+  </p>
+
+  <table>
+    <thead><tr><th style="width:26mm">섹션</th><th>들어가는 정보</th></tr></thead>
+    <tbody>
+      <tr><th>기본</th><td>이름 · 나이 · <b>직함</b>(회장 · 총무 · 감독 겸임) · 재임 연차</td></tr>
+      <tr><th>생활</th><td>직업 · 근무 형태 · <b>주간 가용 칸 수</b> · 거주지 · 혼인/자녀</td></tr>
+      <tr><th>능력</th><td>본인도 뛴다. 능력 5 · 기질 6. <b>나이를 먹으면 같이 떨어진다</b></td></tr>
+      <tr><th>신뢰 🔢</th><td>회원별 목록 + 팀 평균 + <b>올리는 것 / 깎는 것</b></td></tr>
+      <tr><th>직책 위임</th><td>주장 · 회계 · 장비 담당 + <b>적임자 추천</b> (5.5 · E46)</td></tr>
+      <tr><th>이력</th><td>재임 기록 · 통산 전적 · <b>내가 한 일</b> · 시작 시 4축</td></tr>
+    </tbody>
+  </table>
+  <div class="flag">
+    <b>신뢰가 여기 있어야 하는 이유.</b> S-04는 "누가 내 말을 안 듣는가"를 보여주지만
+    <b>왜 안 듣는지의 절반은 나에게 있다.</b>
+  </div>
+
+  <h4>신뢰 — 움직이는 방법까지 적는다</h4>
+  <p><b>"팀 평판은 물려받지만 개인 신뢰는 0부터다"</b>(5.4). 초반 압박의 정체가 이것이다 — <i>팀은 알아도 나는 모른다.</i></p>
+  <table class="tight">
+    <thead><tr><th style="width:52mm">올리는 것</th><th>깎는 것</th></tr></thead>
+    <tbody>
+      <tr><td>약속 지키기 <span style="color:var(--mut)">(자기 규칙 준수)</span></td><td><b>예외 두기</b></td></tr>
+      <tr><td>일관된 집행</td><td>설정 자주 변경 <span style="color:var(--mut)">(말 바꾸기)</span></td></tr>
+      <tr><td>경기 성사</td><td>방출 통보</td></tr>
+      <tr><td>경조사 챙김</td><td><b>경기 취소</b></td></tr>
+    </tbody>
+  </table>
+  <p>목록만 있고 움직이는 방법이 화면에 없으면 <b>플레이어가 신뢰를 관리할 수가 없다.</b></p>
+
+  <h4>직책 위임 — 21칸을 푸는 유일한 수단</h4>
+  <table class="tight">
+    <thead><tr><th style="width:22mm">직책</th><th style="width:38mm">대신 해주는 것</th><th style="width:24mm">필요한 자질</th><th>리스크</th></tr></thead>
+    <tbody>
+      <tr><th>주장</th><td>회원 관리 일부 (10장)</td><td>영향력 · 친화력</td><td>그 사람 색깔이 팀에 스며든다</td></tr>
+      <tr><th>회계</th><td>회비 징수 · 독촉 (9.2)</td><td>성실함</td><td><b>감정적 부담을 넘긴다</b> — 미움도 넘어간다</td></tr>
+      <tr><th>장비 담당</th><td><b>유니폼 발주 · 관리</b> (9.3)</td><td>성실함</td><td>발주 실수</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <b>행동 제약이 시간대(E16)인 게임에서 위임은 그 제약을 푸는 유일한 장치</b>다.
+    각 직책에 <b>적임자 추천</b>이 뜬다 — 자질에 맞는 회원 2~3명.
+    <b>지정은 여기서, 표시는 해당 화면에서</b> — S-07 회비 탭에 <code>회계: 최승철</code>이 뜬다.<br><br>
+    <b>장비 담당의 역할을 유니폼으로 재정의했다.</b> 원래 "소모품 · 내구재"였는데
+    S-07에서 소모품을 자동 구매로 내리면서 <b>이 직책이 할 일이 없어졌다.</b>
+    사이즈를 취합해 발주하는 것은 실제 조기축구단의 일이다.
+  </div>
+
+  <h4>이력 — S-13과 짝을 이룬다</h4>
+  <table class="tight">
+    <tbody>
+      <tr><td style="width:34mm"><b>S-13 연대기</b></td><td>팀에게 <b>일어난</b> 일</td></tr>
+      <tr><td><b>S-14 이력</b></td><td>내가 <b>한</b> 일</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <code>내가 한 일</code>은 방출 n회 · 규칙 n개 제정 · 경기 취소 n회 · 면접 n회 ·
+    <b>회원을 만난 총 횟수</b>다.
+    S-13의 <i>"11명이 못 뛰어서 나갔다"</i> 옆에 <i>"회원을 만난 총 횟수 34회"</i>가 있으면
+    <b>그 자체로 문장이 된다.</b>
+    시작 시 4축(사실상 난이도 · E62)은 <b>이력에 흡수했다</b> — 못 바꾸는 값을 상시 노출할 이유가 없다.
+  </p>
+
+  <h2 style="margin-top:9mm"><span class="id">설정</span>설정<span class="rt">타이틀 바에서 연다</span></h2>
+  <table>
+    <thead><tr><th style="width:20mm">섹션</th><th>들어가는 정보</th></tr></thead>
+    <tbody>
+      <tr><th>화면</th><td>해상도 · 전체화면 · <b>스킨 A~D + 미리보기 4장</b> · 글자 크기 · 색맹 모드</td></tr>
+      <tr><th>게임</th><td>자동 저장 주기 · 배속 기본값 · <b>회원 경고 알림</b>(기본 꺼짐)</td></tr>
+      <tr><th>자동화</th><td>용병 자동 호출 · 신입 자동 거절 — <b>기본 꺼짐</b>(4.9)</td></tr>
+      <tr><th>정보</th><td><b>시드</b>(읽기 전용) · 버전</td></tr>
     </tbody>
   </table>
 
-  <h4>설계 노트</h4>
-  <ul>
-    <li><b>"남긴 것" 열이 이 게임에서 가장 중요한 텍스트다.</b>
-      정한수의 "첫 유니폼을 이 사람이 골랐다", 류기범의 "회계 장부 양식이 이 사람 것" 처럼
-      <b>지금 화면에 남아 있는 것의 유래</b>를 적는다</li>
-    <li>이탈 사유가 <b>미화되지 않는다.</b> "규칙 위반 방출", "출전 불만"이 그대로 남는다</li>
-    <li>배준영의 "거의 못 뛰었다. 잘 챙기지 못했다"는 <b>시스템이 판정한 문장</b>이다 —
-      출전 시간이 팀 평균의 30% 미만인 채로 불만 이탈하면 붙는다</li>
-    <li>화면 하단이 <b>현재와 연결한다.</b> "이규민이 지금 그 자리에 있다" —
-      과거 기록이 현재의 경고가 되는 유일한 지점</li>
-    <li>이 화면은 <b>후반부에 값이 커진다.</b> 1년차에는 비어 있고,
-      10년차에는 이 표가 게임 전체의 요약이 된다</li>
-  </ul>
+  <h4>회원 경고 알림이 켜는 것</h4>
+  <table class="tight">
+    <tbody>
+      <tr><td style="width:64mm"><b>할 일 영역</b> — 구장 미예약 · 인원 부족 · 회비 미납</td>
+        <td class="ok"><b>항상 켜짐.</b> 사무는 알려준다</td></tr>
+      <tr><td><b>회원 경고</b> — 이탈 위험 · 불만 누적</td>
+        <td class="mid"><b>기본 꺼짐.</b> 이것이 E69의 옵션</td></tr>
+    </tbody>
+  </table>
+  <div class="flag">
+    켜면 S-01 비고 열과 S-03 경고 박스에 <b>내부 판정이 표시</b>된다.
+    사실상 <b>접근성 옵션에 가깝다</b> — "어려우면 켜세요."
+    켜는 순간 2.6의 참을성 보정도 무력해지므로 <b>끄고 하는 것이 설계 의도</b>다.
+  </div>
+
+  <h4>색맹 모드가 할 일이 적어졌다</h4>
+  <table class="tight">
+    <thead><tr><th style="width:30mm">요소</th><th>색 없이도 구분되는 이유</th></tr></thead>
+    <tbody>
+      <tr><th>만족도</th><td><b>얼굴 모양이 다르다</b></td></tr>
+      <tr><th>폼 스파크</th><td><code>●◐○·</code> 기호</td></tr>
+      <tr><th>참석 · 불참</th><td>텍스트</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <b>만족도를 얼굴로 고른 것이 여기서 이득을 봤다.</b> 색맹 모드는 상태색 팔레트 교체 정도만 하면 된다.
+    <b>시드는 읽기 전용</b>으로 표시한다 — 결정론(1.2)이 기반인데 확인할 곳이 없었다.
+    개발 중 버그 재현에 필요하고, 출시 후에도 <i>"같은 시드로 다시"</i>가 성립한다.
+  </p>
 </section>
