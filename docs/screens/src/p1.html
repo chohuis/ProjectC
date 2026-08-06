@@ -71,6 +71,32 @@
   .cap{font-family:var(--mono);font-size:7.4pt;letter-spacing:.14em;color:var(--mut);
        margin:0 0 1.5mm;text-transform:uppercase}
 
+  /* 골격 다이어그램 — 박스문자 대신 실제 레이아웃으로 그린다 */
+  .skel{border:.8pt solid var(--ink2);border-radius:1mm;overflow:hidden;margin:0 0 4mm;
+        font-size:8.4pt;color:var(--ink2);background:#fff}
+  .skel .lb{font-weight:700;color:var(--ink);white-space:nowrap}
+  .skel .lb i{font-style:normal;font-family:var(--mono);font-size:7.2pt;
+              color:var(--mut);font-weight:400;margin-left:1mm}
+  .skel .row{display:flex;align-items:center;gap:3mm;padding:2mm 3mm}
+  .skel .gbar{background:#EEF1F4;border-bottom:.8pt solid var(--ink2)}
+  .skel .gbar .nv{font-family:var(--mono);color:var(--mut);font-size:7.5pt}
+  .skel .gbar .rt{margin-left:auto;display:flex;align-items:center;gap:2.5mm;white-space:nowrap}
+  .skel .gbar .rt em{font-style:normal;border:.5pt solid var(--dan);color:var(--dan);
+                     border-radius:.8mm;padding:0 1.2mm;font-size:7.5pt}
+  .skel .gbar .rt u{text-decoration:none;background:var(--acc);color:#fff;
+                    border-radius:.8mm;padding:.6mm 2.4mm;font-weight:700;font-size:8pt}
+  .skel .mid{padding:0;align-items:stretch}
+  .skel .tr{width:36mm;flex:none;border-right:.8pt solid var(--ink2);padding:2mm 3mm;
+            display:flex;flex-direction:column;gap:1.5mm}
+  .skel .tr .sub{font-size:7.6pt;color:var(--mut);line-height:1.5}
+  .skel .rgt{flex:1;display:flex;flex-direction:column}
+  .skel .cell{padding:2mm 3mm;display:flex;gap:3mm;align-items:baseline;
+              border-bottom:.5pt solid var(--line)}
+  .skel .cell i{font-style:normal;color:var(--mut)}
+  .skel .body{border-bottom:none;min-height:16mm;align-items:flex-start}
+  .skel .drw{background:#FBF3E9;border-top:.8pt solid var(--acc);color:#6E3D0B}
+  .skel .drw .lb{color:#4A2905}
+
   /* 스크린샷 프레임 — 940px 렌더 후 축소.
      zoom 은 transform 과 달리 레이아웃 높이에 반영되므로 프레임이 내용에 맞춰 늘어난다.
      고정 높이로 잘라내면 표 아래쪽이 조용히 사라지기 때문에 auto 로 둔다. */
@@ -97,12 +123,18 @@
   /* 행 높이 15~20px 규약(05-ui.md)에 맞춘 조밀 표. 30명이 스크롤 없이 들어가는 것을 보이는 용도 */
   table.t.dn td{padding:1px 8px;font-size:10.5px;line-height:1.45}
   table.t.dn th{padding:2px 8px}
+  /* 전역 바 — 경로 · 주차 · 빈 칸 · 경고 뱃지 · 주 진행 (05-ui.md 1) */
   .ttl{background:var(--ch);border-bottom:1px solid var(--bd);display:flex;align-items:center;
-       height:26px;padding:0 9px;gap:9px;flex:none}
+       height:32px;padding:0 9px;gap:9px;flex:none}
   .ttl .nv u{text-decoration:none;color:var(--tx3);background:var(--pn);border:1px solid var(--bd);
              width:16px;height:15px;display:inline-grid;place-items:center;font-size:9px;border-radius:2px}
   .ttl .cb{color:var(--tx3);font-size:10.5px}.ttl .cb i{font-style:normal;color:var(--tx)}
-  .ttl .rt{margin-left:auto;font-size:10.5px;color:var(--tx2)}
+  .ttl .rt{margin-left:auto;font-size:10.5px;color:var(--tx2);display:flex;align-items:center;gap:11px}
+  .ttl .rt b{color:var(--tx)}
+  .ttl .wn{background:rgba(212,107,88,.18);color:#EFB2A4;border:1px solid var(--dn);
+           border-radius:2px;padding:1px 6px;font-size:10px}
+  .ttl .go{background:var(--sel);color:var(--selT);padding:3px 13px;border-radius:2px;
+           font-size:11px;font-weight:600}
   .mid{display:grid;grid-template-columns:158px 1fr;overflow:hidden}
   .tr{background:var(--pn2);border-right:1px solid var(--bd);padding:6px 0;overflow:hidden}
   .tr .cl{padding:0 10px 7px;border-bottom:1px solid var(--bd);margin-bottom:5px}
@@ -123,6 +155,7 @@
   .sp i{font-style:normal;display:block;color:var(--tx3);font-size:9px}
   .sp b{font-size:12px;color:var(--tx);font-weight:600}
   .bdy{flex:1;overflow:hidden}
+  /* 하단 바는 경기 화면(S-M1 · S-M2)에만 남는다 — 주중 골격에는 없다 */
   .br{background:var(--ch);border-top:1px solid var(--bd);display:flex;align-items:center;
       height:28px;padding:0 10px;gap:14px;font-size:10.5px;color:var(--tx2);flex:none}
   .br b{color:var(--tx)}
@@ -334,31 +367,41 @@
 <section class="page">
   <h2><span class="id">1</span>골격과 네비게이션<span class="rt">05-ui.md 1~2</span></h2>
   <p class="lead">
-    네 영역으로 고정한다. <b>모든 화면이 같은 골격을 쓰고 바뀌는 것은 본문뿐이다.</b>
-    타이틀 바와 상태 바는 어떤 화면에서도 사라지지 않는다.
+    <b>세 영역으로 고정한다.</b> 모든 화면이 같은 골격을 쓰고 바뀌는 것은 본문뿐이다.
+    전역 바는 어떤 화면에서도 사라지지 않는다.
   </p>
 
-<pre>┌─────────────────────────────────────────────────────────────────┐
-│ <b>타이틀 바</b>  h28   ◀ ▶  대신동FC › 회원 명단 › <b>이규민</b>      2029.03 2주차 │
-├───────────────┬─────────────────────────────────────────────────┤
-│               │ <b>탭 바</b>     h26   개요 │ 이력 │ 관계               │
-│  <b>트리</b>          ├─────────────────────────────────────────────────┤
-│  w150~180     │ <b>요약 스트립</b>  h40   다음 경기 · 참석 · 잔액  (선택)  │
-│  13항목       ├─────────────────────────────────────────────────┤
-│               │                                                 │
-│  운영 5       │ <b>본문</b>       화면마다 다름                          │
-│  클럽 4       │                                                 │
-│  기록 4       │                                                 │
-├───────────────┴─────────────────────────────────────────────────┤
-│ <b>상태 바</b>  h28   회원 12명 · 빈 칸 9 · <b>인원 2 부족</b>     [ 주 진행 ▶ ] │
-└─────────────────────────────────────────────────────────────────┘</pre>
+  <div class="skel">
+    <div class="row gbar">
+      <span class="lb">전역 바 <i>h34</i></span>
+      <span class="nv">◀ ▶</span>
+      <span>대신동FC › 회원 명단 › <b>이규민</b></span>
+      <span class="rt">3월 2주차 · 빈 칸 <b>9</b> · <em>⚠3</em> <u>주 진행 ▶</u></span>
+    </div>
+    <div class="row mid">
+      <div class="tr">
+        <span class="lb">트리 <i>w150~180</i></span>
+        <span class="sub">3그룹 13항목<br>운영 5 · 클럽 4 · 기록 4</span>
+      </div>
+      <div class="rgt">
+        <div class="cell tab"><span class="lb">탭 바 <i>h26</i></span>
+          <span>개요 │ 이력 │ 관계</span></div>
+        <div class="cell strip"><span class="lb">요약 스트립 <i>h40</i></span>
+          <span>다음 경기 · 참석 · 잔액 &nbsp;<i>(선택)</i></span></div>
+        <div class="cell body"><span class="lb">본문 <i>나머지</i></span>
+          <span>화면마다 다름</span></div>
+      </div>
+    </div>
+    <div class="row drw"><span class="lb">이벤트 드로어</span>
+      <span>열릴 때만 (O-1)</span></div>
+  </div>
 
   <table>
     <thead><tr><th style="width:26mm">영역</th><th style="width:24mm">치수</th><th>규칙</th></tr></thead>
     <tbody>
-      <tr><th>타이틀 바</th><td><code>h28</code> 고정</td>
-        <td>뒤로/앞으로 · 경로 · 날짜. <b>화면 이동 히스토리는 여기서만 관리한다.</b>
-          상세로 파고들어도 경로가 남아 길을 잃지 않는다. 설정도 여기서 연다</td></tr>
+      <tr><th>전역 바</th><td><code>h34</code> 고정</td>
+        <td>뒤로/앞으로 · 경로 · 주차 · <b>빈 칸</b> · <b>경고 뱃지</b> · <b>주 진행 버튼</b> · 설정.
+          <b>화면 이동 히스토리와 주간 루프의 확정 지점이 한 줄에 모인다</b></td></tr>
       <tr><th>트리</th><td><code>w150~180</code></td>
         <td>3그룹 13항목 고정. <b>스크롤 없음.</b> 뱃지로 "볼 게 있는 화면"을 표시하고
           <b>0이면 표시하지 않는다</b></td></tr>
@@ -367,10 +410,36 @@
       <tr><th>요약 스트립</th><td><code>h40</code> 선택</td>
         <td>4~6칸. 그 화면에서 늘 봐야 하는 숫자. <b>화면마다 내용이 다르다</b></td></tr>
       <tr><th>본문</th><td>나머지</td><td>표가 기본. 상세 화면은 3분할(프로필 / 수치 / 경고)</td></tr>
-      <tr><th>상태 바</th><td><code>h28</code> 고정</td>
-        <td>전역 요약 + <b>주 진행 버튼.</b> 주간 루프의 확정 지점은 어느 화면에서도 같은 자리</td></tr>
     </tbody>
   </table>
+
+  <h3><span class="n">1.0</span>하단 상태 바를 없앴다</h3>
+  <p>
+    원래 하단에 <code>h28</code> 상태 바가 따로 있었고 거기에 전역 요약과 주 진행 버튼이 있었다.
+    <b>전역 바 하나로 합친다.</b>
+  </p>
+  <table class="tight">
+    <thead><tr><th style="width:44mm">얻는 것</th><th>이유</th></tr></thead>
+    <tbody>
+      <tr><th>본문이 <code>28px</code> 늘어난다</th><td>표 한두 행이 더 들어간다</td></tr>
+      <tr><th>전역 정보가 한 줄에</th><td>주차는 위, 회원 수는 아래로 갈려 있었다. <b>둘 다 화면과 무관한 값</b>이다</td></tr>
+      <tr><th>시선이 한 번 덜 움직인다</th><td>경로·날짜를 보고 다시 화면 아래로 내려가 버튼을 누르는 동선이 사라진다</td></tr>
+    </tbody>
+  </table>
+  <table class="tight">
+    <thead><tr><th style="width:30mm">하단에 있던 것</th><th>처리</th></tr></thead>
+    <tbody>
+      <tr><td class="bad">회원 12명</td><td><b>뺀다</b> — 전역 바 우측에 화면별 요약이 이미 있다 (<code>30명 · 평균 37.2세</code>)</td></tr>
+      <tr><td class="ok">빈 칸 9</td><td><b>남긴다</b> — 어느 화면에 있든 필요하다</td></tr>
+      <tr><td class="mid">인원 2 부족</td><td><b><code>⚠3</code> 뱃지로 압축.</b> 누르면 목록이 내려오고 해당 화면으로 간다</td></tr>
+    </tbody>
+  </table>
+  <div class="flag">
+    <b>경고를 뱃지로 줄여도 손해가 아니다</b> — S-01 할 일 영역이 같은 목록을 펼쳐서 보여준다.
+    전역 바는 <i>"다른 화면에 있어도 개수는 안다"</i> 정도면 된다.<br><br>
+    <b>주 진행이 우상단으로 갔다.</b> 되돌릴 수 없는 행동이 마우스가 자주 가는 자리로
+    옮겨간 것은 사실이라, <b>단축키를 주지 않는 원칙은 그대로 유지한다.</b>
+  </div>
 
   <h3><span class="n">1.1</span>네비게이션은 3단을 넘지 않는다</h3>
   <table class="tight">
@@ -438,8 +507,8 @@
       <tr><th>버튼</th><td>전 화면</td><td>주요 1개(선택색) · 보조 다수 · 위험(빨강)은 확인 오버레이 동반</td></tr>
       <tr><th>3단 세그먼트</th><td>S-04 전술</td><td>지시 선택. <b>3단 고정</b> — 0~20 스케일을 쓰지 않는다</td></tr>
       <tr><th>이벤트 드로어</th><td>전 화면</td>
-        <td>상태 바 위로 열린다. <b>O-6 면접과 S-M2 교체 거부도 이걸 쓴다</b> —
-          S-M2는 상태 바가 없어 하단 컨트롤 바 위로 열린다</td></tr>
+        <td><b>화면 최하단</b>에 열린다. O-6 면접과 S-M2 교체 거부도 이걸 쓴다 —
+          <b>상태 바를 없애면서 예외 조항이 사라졌다</b></td></tr>
       <tr><th>바둑알 + 체력 링</th><td>S-M2</td><td>원 + 등번호 + 둘레 게이지. 전부 <code>_draw()</code></td></tr>
     </tbody>
   </table>
